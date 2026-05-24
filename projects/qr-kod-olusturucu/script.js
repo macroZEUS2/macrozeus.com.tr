@@ -1,24 +1,30 @@
 const wrapper = document.querySelector(".wrapper"),
-qrInput = wrapper.querySelector(".form input"),
-generateBtn = wrapper.querySelector(".form button"),
-qrImg = wrapper.querySelector(".qr-code img");
-let preValue;
+input = document.querySelector(".form input"),
+button = document.querySelector(".form button"),
+img = document.querySelector(".qr-code img");
 
-generateBtn.addEventListener("click", () => {
-    let qrValue = qrInput.value.trim();
-    if(!qrValue || preValue === qrValue) return;
-    preValue = qrValue;
-    generateBtn.innerText = "QR Kod Oluşturuluyor...";
-    qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
-    qrImg.addEventListener("load", () => {
+let lastValue = "";
+
+button.addEventListener("click", () => {
+    const value = input.value.trim();
+
+    if (!value || value === lastValue) return;
+
+    lastValue = value;
+
+    button.innerText = "Oluşturuluyor...";
+
+    img.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(value)}`;
+
+    img.onload = () => {
         wrapper.classList.add("active");
-        generateBtn.innerText = "QR Kod Oluştur";
-    });
+        button.innerText = "QR Kod Oluştur";
+    };
 });
 
-qrInput.addEventListener("keyup", () => {
-    if(!qrInput.value.trim()) {
+input.addEventListener("input", () => {
+    if (!input.value.trim()) {
         wrapper.classList.remove("active");
-        preValue = "";
+        lastValue = "";
     }
 });

@@ -2,80 +2,46 @@ const convertBtn = document.getElementById('convertBtn');
 const amountInput = document.getElementById('amount');
 const baseCurrencySelect = document.getElementById('baseCurrency');
 const targetCurrencySelect = document.getElementById('targetCurrency');
-const conversionResult = document.getElementById('conversionResult');
+const result = document.getElementById('conversionResult');
 
 const apiUrl = 'https://api.frankfurter.app/latest';
 
-// Döviz kurlarını API'den çekme
-async function fetchCurrencies() {
-    try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error('API\'den döviz kurları alınamadı.');
-        }
-        const data = await response.json();
-        const currencies = Object.keys(data.rates);
-        
-        // Varsayılan kurları ekleyelim (USD, EUR, TRY)
-        const defaultCurrencies = ['USD', 'EUR', 'TRY'];
-        const allCurrencies = [...new Set([...defaultCurrencies, ...currencies])].sort();
+// currencies
+async function loadCurrencies() {
+    const res = await fetch(apiUrl);
+    const data = await res.json();
 
-        // Select kutularını doldurma
-        allCurrencies.forEach(currency => {
-            const baseOption = document.createElement('option');
-            baseOption.value = currency;
-            baseOption.textContent = currency;
-            baseCurrencySelect.appendChild(baseOption);
+    const currencies = Object.keys(data.rates);
+    const list = ['USD','EUR','TRY', ...currencies];
 
-            const targetOption = document.createElement('option');
-            targetOption.value = currency;
-            targetOption.textContent = currency;
-            targetCurrencySelect.appendChild(targetOption);
-        });
+    [...new Set(list)].forEach(cur => {
+        baseCurrencySelect.innerHTML += `<option>${cur}</option>`;
+        targetCurrencySelect.innerHTML += `<option>${cur}</option>`;
+    });
 
-        // Varsayılan seçimleri belirleme
-        baseCurrencySelect.value = 'USD';
-        targetCurrencySelect.value = 'TRY';
-
-    } catch (error) {
-        console.error('Hata:', error);
-        conversionResult.textContent = 'Döviz kurları yüklenirken bir hata oluştu.';
-    }
+    baseCurrencySelect.value = "USD";
+    targetCurrencySelect.value = "TRY";
 }
 
-// Döviz kurunu API'den çevirme
-async function convertCurrency() {
-    const amount = parseFloat(amountInput.value);
-    const baseCurrency = baseCurrencySelect.value;
-    const targetCurrency = targetCurrencySelect.value;
+// convert
+async function convert() {
+    const amount = Number(amountInput.value);
+    const from = baseCurrencySelect.value;
+    const to = targetCurrencySelect.value;
 
-    if (isNaN(amount) || amount <= 0) {
-        conversionResult.textContent = 'Lütfen geçerli bir miktar girin!';
+    if (!amount || amount <= 0) {
+        result.textContent = "Geçerli miktar gir";
         return;
     }
 
-    // Eğer temel ve hedef para birimleri aynıysa
-    if (baseCurrency === targetCurrency) {
-        conversionResult.textContent = `${amount} ${baseCurrency} = ${amount} ${targetCurrency}`;
-        return;
-    }
+    const res = await fetch(`${apiUrl}?from=${from}&to=${to}`);
+    const data = await res.json();
 
-    try {
-        const response = await fetch(`${apiUrl}?from=${baseCurrency}&to=${targetCurrency}`);
-        if (!response.ok) {
-            throw new Error('API\'den dönüşüm oranı alınamadı.');
-        }
-        const data = await response.json();
-        const rate = data.rates[targetCurrency];
-        const convertedAmount = amount * rate;
+    const rate = data.rates[to];
+    const output = amount * rate;
 
-        conversionResult.textContent = `${amount} ${baseCurrency} = ${convertedAmount.toFixed(2)} ${targetCurrency}`;
-    } catch (error) {
-        console.error('Hata:', error);
-        conversionResult.textContent = 'Dönüşüm yapılırken bir hata oluştu.';
-    }
+    result.textContent = `${amount} ${from} = ${output.toFixed(2)} ${to}`;
 }
 
-// Olay dinleyicileri
-document.addEventListener('DOMContentLoaded', fetchCurrencies);
-convertBtn.addEventListener('click', convertCurrency);
+document.addEventListener('DOMContentLoaded', loadCurrencies);
+convertBtn.addEventListener('click', convert);

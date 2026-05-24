@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Döviz Çevirici</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- FIXED BACK LINK -->
+    <a href="../../index.html" class="back-to-home">
+        <i class='bx bx-arrow-back'></i>
+    </a>
+
+    <div class="container">
+        <h1 class="title">Döviz Çevirici</h1>
+
+        <div class="converter">
+
+            <div class="input-group">
+                <label for="amount">Miktar</label>
+                <input type="number" id="amount" placeholder="Miktar" min="0">
+            </div>
+
+            <div class="input-group">
+                <label>Base</label>
+                <select id="baseCurrency"></select>
+            </div>
+
+            <div class="input-group">
+                <label>Target</label>
+                <select id="targetCurrency"></select>
+            </div>
+
+            <button id="convertBtn">Convert</button>
+
+        </div>
+
+        <div class="result">
+            <p id="conversionResult"></p>
+        </div>
+    </div>
+
+    <div class="attribute">
+        Created by <a href="https://github.com/macroZEUS2" target="_blank">macroZEUS</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

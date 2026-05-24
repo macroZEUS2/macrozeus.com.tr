@@ -1,146 +1,102 @@
-/* Import Google Font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-:root{
-    --clr-btn-bg: #ff0000;
-    --clr-btn-bg-hover: #000;
-    --clr-primary: #fff;
-}
+
 body{
-  display: flex;
-  padding: 0 10px;
   min-height: 100vh;
+  display: flex;
   align-items: center;
-  background: RGB(178, 190, 181);
   justify-content: center;
+  background: rgb(178, 190, 181);
 }
+
 .wrapper{
-  height: 265px;
-  max-width: 410px;
+  width: 410px;
   background: #696969;
   border-radius: 10px;
-  padding: 20px 25px 0;
-  transition: height 0.2s ease;
-  box-shadow: 0 10px 30px #696969;
+  padding: 20px;
+  transition: 0.2s;
 }
+
 .wrapper.active{
   height: 530px;
 }
+
 header h1{
-  font-size: 21px;
-  font-weight: 500;
   color: #fff;
+  font-size: 22px;
 }
+
 header p{
+  color: #ddd;
   margin-top: 5px;
-  /* Düzeltme: Yazı rengi daha okunabilir hale getirildi */
-  color: var(--clr-primary);
-  font-size: 16px;
 }
-.wrapper .form{
-  margin: 20px 0 25px;
+
+.form{
+  margin-top: 20px;
 }
-.form :where(input, button){
-  width: 100%;
-  height: 55px;
-  border: none;
-  outline: none;
-  border-radius: 5px;
-  transition: 0.1s ease;
-}
+
 .form input{
-  font-size: 18px;
-  padding: 0 17px;
-  border: 1px solid #999;
-}
-.form input:focus{
-  box-shadow: 0 3px 6px rgba(0,0,0,0.13);
-}
-.form input::placeholder{
-  color: #999;
-}
-.form button{
-    /* Düzeltme: Gereksiz ve hatalı kodlar temizlendi. */
-    padding: 0.5rem 1rem;
-    font-size: 17px;
-    background-color: rgb(255, 163, 26);
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-.form button:hover {
-  background-color: var(--clr-btn-bg-hover);
-}
-.qr-code{
-  opacity: 0;
-  display: flex;
-  padding: 33px 0;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border: none;
   border-radius: 5px;
-  align-items: center;
-  pointer-events: none;
-  justify-content: center;
-  border: 1px solid #ccc;
+  outline: none;
 }
+
+.form button{
+  width: 100%;
+  margin-top: 10px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background: orange;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form button:hover{
+  background: black;
+}
+
+.qr-code{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .wrapper.active .qr-code{
   opacity: 1;
   pointer-events: auto;
-  transition: opacity 0.5s 0.05s ease;
 }
+
 .qr-code img{
   width: 170px;
 }
 
-/* Düzeltme: Geri dönme butonu için CSS eklendi. */
-.back-to-home {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 32px;
-    color: #000;
-    background-color: #fff;
-    padding: 8px 12px;
-    border-radius: 50%;
-    transition: all 0.3s ease;
-}
-
-.back-to-home:hover {
-    background-color: #f0f0f0;
-    transform: scale(1.1);
+/* 🔥 KRİTİK FIX */
+.back-to-home{
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+  font-size: 28px;
+  color: #000;
+  background: #fff;
+  padding: 10px;
+  border-radius: 50%;
 }
 
 .attribute{
-    position: absolute;
-    bottom: 10px;
-    color: #000;
-}
-.attribute a{
-    color: #000;
-    font-weight: 700;
-}
-
-@media (max-width: 430px){
-  .wrapper{
-    height: 255px;
-    padding: 16px 20px;
-  }
-  .wrapper.active{
-    height: 510px;
-  }
-  header p{
-    /* Düzeltme: Arka planla uyumsuz renkten daha okunabilir renge çevrildi. */
-    color: var(--clr-primary);
-  }
-  .form :where(input, button){
-    height: 52px;
-  }
-  .qr-code img{
-    width: 160px;
-  }  
+  position: absolute;
+  bottom: 10px;
+  color: #000;
 }
