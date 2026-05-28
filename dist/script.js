@@ -22,9 +22,9 @@ const projects = [
         isGames: true,
     },
     {
-        name: 'Renk Oluşturucu',
-        image: 'https://r.resimlink.com/X8p40.png',
-        link: 'projects/renk-olusturucu/',
+        name: 'Renk Paleti',
+        image: 'https://r.resimlink.com/x2IGXi1zP.png',
+        link: 'projects/renk-paleti/',
     },
     {
         name: 'Dijital Saat',
