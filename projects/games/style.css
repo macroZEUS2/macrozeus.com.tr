@@ -122,9 +122,11 @@ body {
     overflow: hidden;
 }
 .game-card img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
     background-color: rgb(178, 190, 181);
-    object-fit: contain;
-    padding: 20px;
 }
 .game-card-details {
     height: 100px;
