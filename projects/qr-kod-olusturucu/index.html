@@ -3,38 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>QR Kod Oluşturucu</title>
-
     <link rel="stylesheet" href="style.css">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
 <body>
-
-    <!-- BACK FIX -->
-    <a href="../../index.html" class="back-to-home">
+    <a href="/index.html" class="back-to-home">
         <i class='bx bx-arrow-back'></i>
     </a>
-
     <div class="wrapper">
         <header>
             <h1>QR Kod Oluşturucu</h1>
-            <p>Metin veya URL girerek QR oluştur</p>
+            <p>QR kod oluşturmak için bir url yapıştırın veya metin girin</p>
         </header>
-
         <div class="form">
-            <input type="text" placeholder="URL veya metin">
+            <input type="text" spellcheck="false" placeholder="Url veya metin giriniz">
             <button>QR Kod Oluştur</button>
         </div>
-
         <div class="qr-code">
-            <img src="" alt="qr">
+            <img src="" alt="qr-code">
         </div>
     </div>
 
     <div class="attribute">
-        Created by <a href="https://github.com/macroZEUS2" target="_blank">macroZEUS</a>
+        Create by
+        <a href="https://www.instagram.com/muhammetalialc">
+            Muhammet Ali Alçı
+        </a>
     </div>
 
     <script src="script.js"></script>

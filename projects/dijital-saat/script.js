@@ -1,27 +1,24 @@
+// update date
 function updateDate() {
     const now = new Date();
-    const options = {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    };
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = now.toLocaleDateString('tr-TR', options);
+    document.querySelector('.date').textContent = dateString;
+}
 
-    document.querySelector('.date').textContent =
-        now.toLocaleDateString('tr-TR', options);
+// update time
+function updateTime() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+    const timeString = `${formatTime(hours)}:${formatTime(minutes)}:${formatTime(seconds)}`;
+    document.querySelector('.time').textContent = timeString;
 }
 
 function formatTime(time) {
     return time < 10 ? `0${time}` : time;
-}
-
-function updateTime() {
-    const now = new Date();
-
-    const timeString =
-        `${formatTime(now.getHours())}:${formatTime(now.getMinutes())}:${formatTime(now.getSeconds())}`;
-
-    document.querySelector('.time').textContent = timeString;
 }
 
 updateDate();

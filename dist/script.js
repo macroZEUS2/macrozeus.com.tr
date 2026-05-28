@@ -1,50 +1,141 @@
-const projectList = document.getElementById("projectList");
+// menu toggle
+const menuIcon = document.querySelector('.menu-icon');
+const menuList = document.querySelector('.menu-list');
 
+menuIcon.addEventListener("click", () => {
+    menuIcon.classList.toggle("active");
+    menuList.classList.toggle("active");
+});
+
+// project details
 const projects = [
     {
-        title: "Dijital Saat",
-        desc: "Canlı saat uygulaması",
-        path: "projects/dijital-saat/index.html",
-        icon: "bx-time"
+        name: 'Ana Sayfa (Homepage)',
+        image: 'https://cdn-icons-png.flaticon.com/512/25/25694.png',
+        link: 'http://home.macrozeus.com.tr',
+        isHomepage: true,
     },
     {
-        title: "Döviz Çevirici",
-        desc: "Döviz çevirici",
-        path: "projects/doviz-cevirici/doviz-cevirici.html",
-        icon: "bx-transfer"
+    name: 'Oyunlar',
+    image: 'https://cdn-icons-png.flaticon.com/512/2603/2603650.png',
+    link: 'projects/games/index.html',
+    isGames: true,
     },
     {
-        title: "QR Kod Oluşturucu",
-        desc: "QR generator",
-        path: "projects/qr-kod-olusturucu/index.html",
-        icon: "bx-qr"
+        name: 'Renk Oluşturucu',
+        image: 'https://r.resimlink.com/X8p40.png',
+        link: 'projects/renk-olusturucu/index.html',
     },
     {
-        title: "Renk Oluşturucu",
-        desc: "Renk üretici",
-        path: "projects/renk-olusturucu/index.html",
-        icon: "bx-palette"
+        name: 'Dijital Saat',
+        image: 'https://r.resimlink.com/m4qlQX6c.png',
+        link: 'projects/dijital-saat/index.html',
     },
     {
-        title: "Şifre Oluşturucu",
-        desc: "Password generator",
-        path: "projects/sifre-olusturucu/index.html",
-        icon: "bx-lock"
-    }
+        name: 'QR Kod Oluşturucu',
+        image: 'https://r.resimlink.com/QmfqoM.png',
+        link: 'projects/qr-kod-olusturucu/index.html',
+    },
+    {
+        name: 'Döviz Çevirici',
+        image: 'https://r.resimlink.com/4etWJwLY.png',
+        link: 'projects/doviz-cevirici/index.html',
+    },
+    {
+        name: 'Şifre Oluşturucu',
+        image: 'https://r.resimlink.com/bWgMamkn.png',
+        link: 'projects/sifre-olusturucu/index.html',
+    },
 ];
 
-projects.forEach(p => {
-    const a = document.createElement("a");
-    a.className = "card";
+const projectList = document.querySelector('.project-list');
 
-    // 🔥 EN GARANTİLİ FIX
-    a.href = "./" + p.path;
+// Homepage kartını başa al, gerisini karıştır
+const homepageCard = projects.filter(p => p.isHomepage);
+const otherProjects = projects.filter(p => !p.isHomepage);
 
-    a.innerHTML = `
-        <i class='bx ${p.icon}'></i>
-        <h3>${p.title}</h3>
-        <p>${p.desc}</p>
-    `;
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+shuffleArray(otherProjects);
 
-    projectList.appendChild(a);
+const sortedProjects = [...homepageCard, ...otherProjects];
+
+sortedProjects.forEach((project) => {
+    const card = document.createElement('div');
+    card.classList.add('project-card');
+    if (project.isHomepage) card.classList.add('homepage-card');
+
+    const image = document.createElement('img');
+    image.src = project.image;
+    image.alt = project.name;
+    image.classList.add('project-img');
+
+    const projectDetails = document.createElement('div');
+    projectDetails.classList.add('project-details');
+
+    const name = document.createElement('h3');
+    name.textContent = project.name;
+    name.classList.add('project-title');
+
+    const btngroup = document.createElement('div');
+    btngroup.classList.add('btn-gruop');
+
+    const görüntüleBtn = document.createElement('a');
+    görüntüleBtn.textContent = 'Görüntüle';
+    görüntüleBtn.setAttribute('href', project.link);
+    if (project.isHomepage) {
+        görüntüleBtn.setAttribute('target', '_blank');
+    }
+    görüntüleBtn.classList.add('goruntule-btn');
+
+    btngroup.appendChild(görüntüleBtn);
+    projectDetails.appendChild(name);
+    projectDetails.appendChild(btngroup);
+    card.appendChild(image);
+    card.appendChild(projectDetails);
+    projectList.appendChild(card);
 });
+
+// github star count
+const star = document.querySelectorAll('.star-count');
+let starCount = 0;
+
+function starUp() {
+    starCount++;
+    star.forEach((starSpan) => {
+        starSpan.textContent = starCount;
+    });
+    if (starCount === 5) {
+        clearInterval(timerInterval);
+    }
+}
+
+let timerInterval;
+function startTimer() {
+    timerInterval = setInterval(starUp, 100);
+}
+document.addEventListener('DOMContentLoaded', startTimer);
+
+// scroll reveal
+const animateElement = (element, delay, distance, duration, origin) => {
+    const sr = ScrollReveal({
+        delay: delay,
+        distance: distance,
+        duration: duration,
+        easing: 'ease',
+        origin: origin,
+    });
+    sr.reveal(element);
+};
+
+// Kart animasyonları JS ile eklendikten sonra çalışması için kısa gecikme
+setTimeout(() => {
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach((project, index) => {
+        animateElement(project, 300 + index * 100, '50px', 500, 'bottom');
+    });
+}, 100);

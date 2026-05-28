@@ -1,51 +1,40 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Renk Oluşturucu</title>
-
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renk Oluşturucu</title>
+    <script src="https://kit.fontawesome.com/46b7ceee20.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-
 <body>
-
-  <a href="../index.html" class="back-to-home">
-    <i class="fa-solid fa-arrow-left"></i>
-  </a>
-
-  <div class="container">
-
-    <div class="container-header">
-      <h1>Renk Oluşturucu</h1>
-    </div>
-
-    <div class="container-body">
-      <div class="color-box"></div>
-
-      <div class="color-info">
-        <div class="color-value">
-          <h3>Kod: <span id="colorKodValue">#000000</span></h3>
+    <a href="/index.html" class="back-to-home">
+        <i class='bx bx-arrow-back'></i>
+    </a>
+    <div class="container">
+        <div class="container-header">
+            <h1>Renk Oluşturucu</h1>
         </div>
-      </div>
+        <div class="container-body">
+            <div class="color-box"></div>
+            <div class="color-info">
+                <div class="color-value">
+                    <h3>Kod : <span id="colorKodValue"></span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="container-footer">
+            <button class="color-generate-btn" id="colorGenerateBtn">
+                <i class="fa-solid fa-location-arrow"></i>
+                Renk Oluştur
+            </button>
+        </div>
     </div>
-
-    <div class="container-footer">
-      <button id="colorGenerateBtn">
-        <i class="fa-solid fa-location-arrow"></i>
-        Renk Oluştur
-      </button>
+    <div class="attribute">
+        Create by
+        <a href="https://www.instagram.com/muhammetalialc">Muhammet Ali Alçı</a>
     </div>
-
-  </div>
-
-  <div class="attribute">
-    Create by
-    <a href="https://www.instagram.com/muhammetalialc">Muhammet Ali Alçı</a>
-  </div>
-
-  <script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
