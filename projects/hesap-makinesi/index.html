@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesap Makinesi</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="/" class="back-to-home">
+        <i class='bx bx-arrow-back'></i>
+    </a>
+    <div class="container">
+        <div class="display">
+            <div class="expression" id="expression"></div>
+            <div class="result" id="result">0</div>
+        </div>
+        <div class="buttons">
+            <button class="btn clear span-two" onclick="clearAll()">AC</button>
+            <button class="btn clear" onclick="deleteLast()">⌫</button>
+            <button class="btn operator" onclick="appendValue('%')">%</button>
+            <button class="btn number" onclick="appendValue('7')">7</button>
+            <button class="btn number" onclick="appendValue('8')">8</button>
+            <button class="btn number" onclick="appendValue('9')">9</button>
+            <button class="btn operator" onclick="appendValue('÷')">÷</button>
+            <button class="btn number" onclick="appendValue('4')">4</button>
+            <button class="btn number" onclick="appendValue('5')">5</button>
+            <button class="btn number" onclick="appendValue('6')">6</button>
+            <button class="btn operator" onclick="appendValue('×')">×</button>
+            <button class="btn number" onclick="appendValue('1')">1</button>
+            <button class="btn number" onclick="appendValue('2')">2</button>
+            <button class="btn number" onclick="appendValue('3')">3</button>
+            <button class="btn operator" onclick="appendValue('-')">-</button>
+            <button class="btn number" onclick="appendValue('0')">0</button>
+            <button class="btn number" onclick="appendValue('.')">.</button>
+            <button class="btn equals" onclick="calculate()">=</button>
+            <button class="btn operator" onclick="appendValue('+')">+</button>
+        </div>
+    </div>
+    <div class="attribute">
+        Create by
+        <a href="https://www.instagram.com/muhammetalialc">Muhammet Ali Alçı</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

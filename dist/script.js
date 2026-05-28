@@ -46,6 +46,11 @@ const projects = [
         image: 'https://r.resimlink.com/bWgMamkn.png',
         link: 'projects/sifre-olusturucu/',
     },
+    {
+        name: 'Hesap Makinesi',
+        image: 'https://r.resimlink.com/bWgMamkn.png',
+        link: 'projects/hesap-makinesi/',
+    },
 ];
 
 const projectList = document.querySelector('.project-list');
