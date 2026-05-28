@@ -384,10 +384,10 @@ header {
     background-color: var(--clr-btn-bg-hover);
 }
 
-/* homepage card özel stil */
-.project-card.homepage-card img {
+.project-card.homepage-card img,
+.project-card.games-card img {
     object-fit: contain;
-    background-color: #1a1a2e;
+    background-color: rgb(178, 190, 181);
     padding: 40px;
 }
 

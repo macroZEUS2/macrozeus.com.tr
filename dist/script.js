@@ -16,10 +16,10 @@ const projects = [
         isHomepage: true,
     },
     {
-    name: 'Oyunlar',
-    image: 'https://cdn-icons-png.flaticon.com/512/2603/2603650.png',
-    link: 'projects/games/index.html',
-    isGames: true,
+        name: 'Oyunlar',
+        image: 'https://cdn-icons-png.flaticon.com/512/686/686589.png',
+        link: 'projects/games/index.html',
+        isGames: true,
     },
     {
         name: 'Renk Oluşturucu',
@@ -50,9 +50,11 @@ const projects = [
 
 const projectList = document.querySelector('.project-list');
 
-// Homepage kartını başa al, gerisini karıştır
 const homepageCard = projects.filter(p => p.isHomepage);
-const otherProjects = projects.filter(p => !p.isHomepage);
+const gamesCard = projects.filter(p => p.isGames);
+const otherProjects = projects.filter(p => !p.isHomepage && !p.isGames);
+shuffleArray(otherProjects);
+const sortedProjects = [...homepageCard, ...gamesCard, ...otherProjects];
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -87,9 +89,9 @@ sortedProjects.forEach((project) => {
     const görüntüleBtn = document.createElement('a');
     görüntüleBtn.textContent = 'Görüntüle';
     görüntüleBtn.setAttribute('href', project.link);
-    if (project.isHomepage) {
-        görüntüleBtn.setAttribute('target', '_blank');
-    }
+   if (project.isHomepage) {
+    görüntüleBtn.setAttribute('target', '_blank');
+}
     görüntüleBtn.classList.add('goruntule-btn');
 
     btngroup.appendChild(görüntüleBtn);
@@ -109,7 +111,7 @@ function starUp() {
     star.forEach((starSpan) => {
         starSpan.textContent = starCount;
     });
-    if (starCount === 5) {
+    if (starCount === 7) {
         clearInterval(timerInterval);
     }
 }

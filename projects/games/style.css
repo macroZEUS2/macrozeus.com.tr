@@ -22,7 +22,6 @@ body {
     min-height: 100vh;
 }
 
-/* Geri butonu */
 .back-to-home {
     position: fixed;
     top: 20px;
