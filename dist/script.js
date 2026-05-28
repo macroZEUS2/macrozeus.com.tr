@@ -48,7 +48,7 @@ const projects = [
     },
     {
         name: 'Hesap Makinesi',
-        image: 'https://r.resimlink.com/bWgMamkn.png',
+        image: 'https://r.resimlink.com/tB8qvGCpbK.png',
         link: 'projects/hesap-makinesi/',
     },
 ];
