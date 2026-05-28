@@ -4,19 +4,20 @@ const baseCurrencySelect = document.getElementById('baseCurrency');
 const targetCurrencySelect = document.getElementById('targetCurrency');
 const conversionResult = document.getElementById('conversionResult');
 
-const apiUrl = 'https://api.frankfurter.app/latest';
+const apiUrl = 'https://open.er-api.com/v6/latest';
 
 async function fetchCurrencies() {
     try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error('API\'den döviz kurları alınamadı.');
+        conversionResult.textContent = 'Döviz kurları yükleniyor...';
+        const response = await fetch(`${apiUrl}/USD`);
+        if (!response.ok) throw new Error('API hatası');
         const data = await response.json();
-        const currencies = Object.keys(data.rates);
 
-        const defaultCurrencies = ['USD', 'EUR', 'TRY'];
-        const allCurrencies = [...new Set([...defaultCurrencies, ...currencies])].sort();
+        if (data.result !== 'success') throw new Error('API hatası');
 
-        allCurrencies.forEach(currency => {
+        const currencies = Object.keys(data.rates).sort();
+
+        currencies.forEach(currency => {
             const baseOption = document.createElement('option');
             baseOption.value = currency;
             baseOption.textContent = currency;
@@ -30,6 +31,7 @@ async function fetchCurrencies() {
 
         baseCurrencySelect.value = 'USD';
         targetCurrencySelect.value = 'TRY';
+        conversionResult.textContent = '';
     } catch (error) {
         console.error('Hata:', error);
         conversionResult.textContent = 'Döviz kurları yüklenirken bir hata oluştu.';
@@ -52,12 +54,16 @@ async function convertCurrency() {
     }
 
     try {
-        const response = await fetch(`${apiUrl}?from=${baseCurrency}&to=${targetCurrency}`);
-        if (!response.ok) throw new Error('API\'den dönüşüm oranı alınamadı.');
+        conversionResult.textContent = 'Hesaplanıyor...';
+        const response = await fetch(`${apiUrl}/${baseCurrency}`);
+        if (!response.ok) throw new Error('API hatası');
         const data = await response.json();
+
+        if (data.result !== 'success') throw new Error('API hatası');
+
         const rate = data.rates[targetCurrency];
-        const convertedAmount = amount * rate;
-        conversionResult.textContent = `${amount} ${baseCurrency} = ${convertedAmount.toFixed(2)} ${targetCurrency}`;
+        const convertedAmount = (amount * rate).toFixed(2);
+        conversionResult.textContent = `${amount} ${baseCurrency} = ${convertedAmount} ${targetCurrency}`;
     } catch (error) {
         console.error('Hata:', error);
         conversionResult.textContent = 'Dönüşüm yapılırken bir hata oluştu.';
