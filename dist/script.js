@@ -50,26 +50,24 @@ const projects = [
 
 const projectList = document.querySelector('.project-list');
 
-const homepageCard = projects.filter(p => p.isHomepage);
-const gamesCard = projects.filter(p => p.isGames);
-const otherProjects = projects.filter(p => !p.isHomepage && !p.isGames);
-shuffleArray(otherProjects);
-const sortedProjects = [...homepageCard, ...gamesCard, ...otherProjects];
-
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
-shuffleArray(otherProjects);
 
-const sortedProjects = [...homepageCard, ...otherProjects];
+const homepageCard = projects.filter(p => p.isHomepage);
+const gamesCard = projects.filter(p => p.isGames);
+const otherProjects = projects.filter(p => !p.isHomepage && !p.isGames);
+shuffleArray(otherProjects);
+const sortedProjects = [...homepageCard, ...gamesCard, ...otherProjects];
 
 sortedProjects.forEach((project) => {
     const card = document.createElement('div');
     card.classList.add('project-card');
     if (project.isHomepage) card.classList.add('homepage-card');
+    if (project.isGames) card.classList.add('games-card');
 
     const image = document.createElement('img');
     image.src = project.image;
@@ -89,9 +87,9 @@ sortedProjects.forEach((project) => {
     const görüntüleBtn = document.createElement('a');
     görüntüleBtn.textContent = 'Görüntüle';
     görüntüleBtn.setAttribute('href', project.link);
-   if (project.isHomepage) {
-    görüntüleBtn.setAttribute('target', '_blank');
-}
+    if (project.isHomepage) {
+        görüntüleBtn.setAttribute('target', '_blank');
+    }
     görüntüleBtn.classList.add('goruntule-btn');
 
     btngroup.appendChild(görüntüleBtn);
@@ -134,7 +132,6 @@ const animateElement = (element, delay, distance, duration, origin) => {
     sr.reveal(element);
 };
 
-// Kart animasyonları JS ile eklendikten sonra çalışması için kısa gecikme
 setTimeout(() => {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach((project, index) => {
