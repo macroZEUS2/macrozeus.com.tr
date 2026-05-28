@@ -308,24 +308,40 @@ header {
     text-align: center;
     margin-bottom: 1rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
-    align-items: center;
+    align-items: start;
     justify-items: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .project-list {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     }
 }
-@media (max-width: 480px) {
+
+@media (max-width: 600px) {
     .project-list {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        padding: 0.5rem;
+        gap: 15px;
+    }
+    .project-card img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 400px) {
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+    .project-card {
+        max-width: 100%;
     }
 }
 .project-card {
-    height: 400px;
-    width: 300px;
+    height: auto;
+    width: 100%;
+    max-width: 300px;
     background-color: #fff;
     border: none;
     border-radius: 12px;
@@ -337,7 +353,7 @@ header {
     z-index: 1;
 }
 .project-card img {
-    height: 300px;
+    height: 200px;
     width: 100%;
     background-color: #777c85;
     object-fit: cover;
@@ -345,7 +361,7 @@ header {
     border-radius: 10px 10px 0 0;
 }
 .project-details {
-    height: 100px;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -356,6 +372,8 @@ header {
     color: var(--clr-text-color);
     border: none;
     border-radius: 0 0 10px 10px;
+    gap: 8px;
+    padding-bottom: 15px;
 }
 .project-card h3 {
     margin-top: 0.5rem;
@@ -371,7 +389,9 @@ header {
 }
 .project-card a {
     color: #fff;
-    padding: 0.5rem 5.9rem;
+    padding: 0.5rem 0;
+    width: 100%;
+    text-align: center;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -379,6 +399,7 @@ header {
     font-weight: 600;
     font-size: var(--fs-project-card-btn-txt);
     background-color: var(--clr-btn-bg);
+    display: block;
 }
 .project-card a:hover {
     background-color: var(--clr-btn-bg-hover);
