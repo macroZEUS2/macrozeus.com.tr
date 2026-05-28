@@ -53,7 +53,7 @@ const projects = [
     },
     {
         name: 'Hava Durumu',
-        image: 'https://cdn-icons-png.flaticon.com/512/1163/1163624.png',
+        image: 'https://r.resimlink.com/Dask8L-c.png',
         link: 'projects/hava-durumu/',
     },
 ];
