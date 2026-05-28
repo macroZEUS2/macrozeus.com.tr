@@ -51,6 +51,11 @@ const projects = [
         image: 'https://r.resimlink.com/tB8qvGCpbK.png',
         link: 'projects/hesap-makinesi/',
     },
+    {
+        name: 'Hava Durumu',
+        image: 'https://cdn-icons-png.flaticon.com/512/1163/1163624.png',
+        link: 'projects/hava-durumu/',
+    },
 ];
 
 const projectList = document.querySelector('.project-list');

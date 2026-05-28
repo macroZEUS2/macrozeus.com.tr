@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hava Durumu</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="/" class="back-to-home">
+        <i class='bx bx-arrow-back'></i>
+    </a>
+    <div class="container">
+        <h1 class="title">Hava Durumu</h1>
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Şehir adı girin..." />
+            <button id="searchBtn"><i class='bx bx-search'></i></button>
+        </div>
+        <div class="weather-card" id="weatherCard">
+            <div class="city-name" id="cityName"></div>
+            <div class="weather-icon" id="weatherIcon"></div>
+            <div class="temperature" id="temperature"></div>
+            <div class="description" id="description"></div>
+            <div class="details">
+                <div class="detail-item">
+                    <i class='bx bx-droplet'></i>
+                    <span id="humidity"></span>
+                    <p>Nem</p>
+                </div>
+                <div class="detail-item">
+                    <i class='bx bx-wind'></i>
+                    <span id="wind"></span>
+                    <p>Rüzgar</p>
+                </div>
+                <div class="detail-item">
+                    <i class='bx bx-thermometer'></i>
+                    <span id="feelsLike"></span>
+                    <p>Hissedilen</p>
+                </div>
+            </div>
+        </div>
+        <div class="error" id="error"></div>
+    </div>
+    <div class="attribute">
+        Create by
+        <a href="https://www.instagram.com/muhammetalialc">Muhammet Ali Alçı</a>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
