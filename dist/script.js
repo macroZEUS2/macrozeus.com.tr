@@ -109,7 +109,7 @@ function starUp() {
     star.forEach((starSpan) => {
         starSpan.textContent = starCount;
     });
-    if (starCount === 7) {
+    if (starCount === projects.length) {
         clearInterval(timerInterval);
     }
 }
