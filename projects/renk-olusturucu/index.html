@@ -4,10 +4,9 @@
     <link rel="icon" type="image/png" href="/favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renk Oluşturucu</title>
-    <script src="https://kit.fontawesome.com/46b7ceee20.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <title>Renk Paleti</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <a href="/" class="back-to-home">
@@ -15,20 +14,50 @@
     </a>
     <div class="container">
         <div class="container-header">
-            <h1>Renk Oluşturucu</h1>
+            <h1>Renk Paleti</h1>
         </div>
-        <div class="container-body">
-            <div class="color-box"></div>
-            <div class="color-info">
-                <div class="color-value">
-                    <h3>Kod : <span id="colorKodValue"></span></h3>
+        <div class="picker-section">
+            <input type="color" id="colorPicker" value="#ff6b6b">
+            <div class="color-preview" id="colorPreview"></div>
+        </div>
+        <div class="color-codes">
+            <div class="code-item">
+                <span class="code-label">HEX</span>
+                <div class="code-value-box">
+                    <span id="hexValue">#ff6b6b</span>
+                    <button class="copy-btn" onclick="copyValue('hexValue')">
+                        <i class='bx bx-copy'></i>
+                    </button>
+                </div>
+            </div>
+            <div class="code-item">
+                <span class="code-label">RGB</span>
+                <div class="code-value-box">
+                    <span id="rgbValue">rgb(255, 107, 107)</span>
+                    <button class="copy-btn" onclick="copyValue('rgbValue')">
+                        <i class='bx bx-copy'></i>
+                    </button>
+                </div>
+            </div>
+            <div class="code-item">
+                <span class="code-label">HSL</span>
+                <div class="code-value-box">
+                    <span id="hslValue">hsl(0, 100%, 71%)</span>
+                    <button class="copy-btn" onclick="copyValue('hslValue')">
+                        <i class='bx bx-copy'></i>
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="container-footer">
-            <button class="color-generate-btn" id="colorGenerateBtn">
-                <i class="fa-solid fa-location-arrow"></i>
-                Renk Oluştur
+        <div class="palette-section">
+            <h3>Ton Paleti</h3>
+            <div class="palette" id="palette"></div>
+        </div>
+        <div class="saved-section">
+            <h3>Kaydedilen Renkler</h3>
+            <div class="saved-colors" id="savedColors"></div>
+            <button class="save-btn" id="saveBtn">
+                <i class='bx bx-save'></i> Rengi Kaydet
             </button>
         </div>
     </div>
