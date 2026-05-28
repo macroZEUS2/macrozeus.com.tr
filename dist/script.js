@@ -10,7 +10,7 @@ menuIcon.addEventListener("click", () => {
 // project details
 const projects = [
     {
-        name: 'Ana Sayfa (Homepage)',
+        name: 'Server Homepage',
         image: 'https://cdn-icons-png.flaticon.com/512/25/25694.png',
         link: 'http://home.macrozeus.com.tr',
         isHomepage: true,
@@ -18,33 +18,33 @@ const projects = [
     {
         name: 'Oyunlar',
         image: 'https://cdn-icons-png.flaticon.com/512/686/686589.png',
-        link: 'projects/games/index.html',
+        link: 'projects/games/',
         isGames: true,
     },
     {
         name: 'Renk Oluşturucu',
         image: 'https://r.resimlink.com/X8p40.png',
-        link: 'projects/renk-olusturucu/index.html',
+        link: 'projects/renk-olusturucu/',
     },
     {
         name: 'Dijital Saat',
         image: 'https://r.resimlink.com/m4qlQX6c.png',
-        link: 'projects/dijital-saat/index.html',
+        link: 'projects/dijital-saat/',
     },
     {
         name: 'QR Kod Oluşturucu',
         image: 'https://r.resimlink.com/QmfqoM.png',
-        link: 'projects/qr-kod-olusturucu/index.html',
+        link: 'projects/qr-kod-olusturucu/',
     },
     {
         name: 'Döviz Çevirici',
         image: 'https://r.resimlink.com/4etWJwLY.png',
-        link: 'projects/doviz-cevirici/index.html',
+        link: 'projects/doviz-cevirici/',
     },
     {
         name: 'Şifre Oluşturucu',
         image: 'https://r.resimlink.com/bWgMamkn.png',
-        link: 'projects/sifre-olusturucu/index.html',
+        link: 'projects/sifre-olusturucu/',
     },
 ];
 
