@@ -145,6 +145,6 @@ const animateElement = (element, delay, distance, duration, origin) => {
 setTimeout(() => {
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach((project, index) => {
-        animateElement(project, 300 + index * 100, '50px', 500, 'bottom');
+        animateElement(project, 100 + index * 50, '30px', 400, 'bottom');
     });
-}, 100);
+}, 50);
