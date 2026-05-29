@@ -452,7 +452,7 @@ header.scrolled {
     object-fit: contain;
     border-radius: 10px 10px 0 0;
     transition: transform 0.3s ease;
-    padding: 15px;
+    padding: 20px;
     box-sizing: border-box;
 }
 
