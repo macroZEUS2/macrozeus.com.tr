@@ -447,9 +447,9 @@ header.scrolled {
 
 .project-card img {
     height: 250px;
-    width: 50%;
+    width: 100%;
     background-color: #ffffff;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 10px 10px 0 0;
     transition: transform 0.3s ease;
 }
