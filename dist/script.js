@@ -87,19 +87,34 @@ document.addEventListener('DOMContentLoaded', startTimer);
 
 const projectCards = document.querySelectorAll('.project-card');
 projectCards.forEach((card, index) => {
-card.style.opacity = '0';
-card.style.transform = 'translateY(30px)';
-card.style.transition = `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`;
-setTimeout(() => {
-    card.style.opacity = '1';
-    card.style.transform = 'translateY(0)';
-    const clearDelay = 400 + index * 50 + 50;
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`;
     setTimeout(() => {
-        card.style.transform = '';
-        card.style.transition = '';
-    }, clearDelay);
-}, 50);
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+        const clearDelay = 400 + index * 50 + 50;
+        setTimeout(() => {
+            card.style.transform = '';
+            card.style.transition = '';
+        }, clearDelay);
+    }, 50);
 });
+
+function animateCard(card, index) {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`;
+    setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+        const clearDelay = 400 + index * 50 + 50;
+        setTimeout(() => {
+            card.style.transform = '';
+            card.style.transition = '';
+        }, clearDelay);
+    }, 50);
+}
 
 fetch('projects/games/data/games.json')
     .then(r => r.json())
@@ -109,7 +124,7 @@ fetch('projects/games/data/games.json')
 
         function renderGames(list) {
             gameList.innerHTML = '';
-            list.forEach(g => {
+            list.forEach((g, index) => {
                 const card = document.createElement('div');
                 card.classList.add('project-card');
 
@@ -138,6 +153,7 @@ fetch('projects/games/data/games.json')
                 card.appendChild(img);
                 card.appendChild(details);
                 gameList.appendChild(card);
+                animateCard(card, index);
             });
         }
 
