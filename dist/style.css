@@ -517,21 +517,22 @@ footer a { color: var(--clr-primary); }
 }
 
 .hero-btn.secondary {
-    background-color: #555;
+    background-color: var(--clr-btn-bg);
+    color: #fff;
 }
 
 .hero-btn.secondary:hover {
-    background-color: var(--clr-btn-bg);
+    background-color: #000;
 }
 
 .hero-btn.outline {
-    background-color: transparent;
-    border: 2px solid var(--clr-btn-bg);
-    color: var(--clr-btn-bg);
+    background-color: var(--clr-btn-bg);
+    color: #fff;
+    border: none;
 }
 
 .hero-btn.outline:hover {
-    background-color: var(--clr-btn-bg);
+    background-color: #000;
     color: #fff;
 }
 
