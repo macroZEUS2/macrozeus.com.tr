@@ -420,7 +420,6 @@ header.scrolled {
     width: 100%;
     background-color: #777c85;
     object-fit: cover;
-    object-position: top;
     border-radius: 10px 10px 0 0;
     transition: transform 0.3s ease;
 }
@@ -503,9 +502,6 @@ footer a { color: var(--clr-primary); }
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         padding: 0.5rem;
         gap: 15px;
-    }
-    .project-card img {
-        height: 180px;
     }
 }
 
