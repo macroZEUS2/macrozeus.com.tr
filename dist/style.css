@@ -345,6 +345,7 @@ header.scrolled {
     .hero-name { font-size: 2rem; }
     .hero-socials { justify-content: center; }
     .hero-desc { margin-inline: auto; }
+    .hero-buttons { align-items: center; }
 }
 
 @media (max-width: 480px) {
