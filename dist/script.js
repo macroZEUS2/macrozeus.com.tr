@@ -2,7 +2,6 @@
 const menuIcon = document.querySelector('.menu-icon');
 const menuList = document.querySelector('.menu-list');
 
-// header scroll efekti
 window.addEventListener('scroll', () => {
     const header = document.getElementById('header');
     if (window.scrollY > 50) {
@@ -17,43 +16,14 @@ menuIcon.addEventListener("click", () => {
     menuList.classList.toggle("active");
 });
 
-// project details
 const projects = [
-    {
-        name: 'Renk Paleti',
-        image: 'https://r.resimlink.com/x2IGXi1zP.png',
-        link: 'projects/renk-paleti/',
-    },
-    {
-        name: 'Dijital Saat',
-        image: 'https://r.resimlink.com/m4qlQX6c.png',
-        link: 'projects/dijital-saat/',
-    },
-    {
-        name: 'QR Kod Oluşturucu',
-        image: 'https://r.resimlink.com/QmfqoM.png',
-        link: 'projects/qr-kod-olusturucu/',
-    },
-    {
-        name: 'Döviz Çevirici',
-        image: 'https://r.resimlink.com/4etWJwLY.png',
-        link: 'projects/doviz-cevirici/',
-    },
-    {
-        name: 'Şifre Oluşturucu',
-        image: 'https://r.resimlink.com/bWgMamkn.png',
-        link: 'projects/sifre-olusturucu/',
-    },
-    {
-        name: 'Hesap Makinesi',
-        image: 'https://r.resimlink.com/tB8qvGCpbK.png',
-        link: 'projects/hesap-makinesi/',
-    },
-    {
-        name: 'Hava Durumu',
-        image: 'https://r.resimlink.com/Dask8L-c.png',
-        link: 'projects/hava-durumu/',
-    },
+    { name: 'Renk Paleti', image: 'https://r.resimlink.com/x2IGXi1zP.png', link: 'projects/renk-paleti/' },
+    { name: 'Dijital Saat', image: 'https://r.resimlink.com/m4qlQX6c.png', link: 'projects/dijital-saat/' },
+    { name: 'QR Kod Oluşturucu', image: 'https://r.resimlink.com/QmfqoM.png', link: 'projects/qr-kod-olusturucu/' },
+    { name: 'Döviz Çevirici', image: 'https://r.resimlink.com/4etWJwLY.png', link: 'projects/doviz-cevirici/' },
+    { name: 'Şifre Oluşturucu', image: 'https://r.resimlink.com/bWgMamkn.png', link: 'projects/sifre-olusturucu/' },
+    { name: 'Hesap Makinesi', image: 'https://r.resimlink.com/tB8qvGCpbK.png', link: 'projects/hesap-makinesi/' },
+    { name: 'Hava Durumu', image: 'https://r.resimlink.com/Dask8L-c.png', link: 'projects/hava-durumu/' },
 ];
 
 const projectList = document.querySelector('.project-list');
@@ -65,42 +35,30 @@ function shuffleArray(array) {
     }
 }
 
-const homepageCard = projects.filter(p => p.isHomepage);
-const gamesCard = projects.filter(p => p.isGames);
-const otherProjects = projects.filter(p => !p.isHomepage && !p.isGames);
-shuffleArray(otherProjects);
-const sortedProjects = [...homepageCard, ...gamesCard, ...otherProjects];
+shuffleArray(projects);
 
-sortedProjects.forEach((project) => {
+projects.forEach((project) => {
     const card = document.createElement('div');
     card.classList.add('project-card');
-    if (project.isHomepage) card.classList.add('homepage-card');
-    if (project.isGames) card.classList.add('games-card');
 
     const image = document.createElement('img');
     image.src = project.image;
     image.alt = project.name;
-    image.classList.add('project-img');
 
     const projectDetails = document.createElement('div');
     projectDetails.classList.add('project-details');
 
     const name = document.createElement('h3');
     name.textContent = project.name;
-    name.classList.add('project-title');
 
     const btngroup = document.createElement('div');
     btngroup.classList.add('btn-gruop');
 
-    const görüntüleBtn = document.createElement('a');
-    görüntüleBtn.textContent = 'Görüntüle';
-    görüntüleBtn.setAttribute('href', project.link);
-    if (project.isHomepage) {
-        görüntüleBtn.setAttribute('target', '_blank');
-    }
-    görüntüleBtn.classList.add('goruntule-btn');
+    const btn = document.createElement('a');
+    btn.textContent = 'Görüntüle';
+    btn.setAttribute('href', project.link);
 
-    btngroup.appendChild(görüntüleBtn);
+    btngroup.appendChild(btn);
     projectDetails.appendChild(name);
     projectDetails.appendChild(btngroup);
     card.appendChild(image);
@@ -108,7 +66,6 @@ sortedProjects.forEach((project) => {
     projectList.appendChild(card);
 });
 
-// github star count
 const star = document.querySelectorAll('.star-count');
 let starCount = 0;
 
@@ -139,7 +96,6 @@ projectCards.forEach((card, index) => {
     }, 50);
 });
 
-// games section
 fetch('projects/games/data/games.json')
     .then(r => r.json())
     .then(games => {
@@ -170,7 +126,6 @@ fetch('projects/games/data/games.json')
                 const btn = document.createElement('a');
                 btn.textContent = 'Oyna';
                 btn.href = `projects/games/game.html?id=${g.id}`;
-                btn.classList.add('goruntule-btn');
 
                 btnGroup.appendChild(btn);
                 details.appendChild(title);
@@ -183,7 +138,7 @@ fetch('projects/games/data/games.json')
 
         renderGames(games);
 
-gameSearch.addEventListener('input', () => {
+        gameSearch.addEventListener('input', () => {
             const q = gameSearch.value.toLowerCase();
             const filtered = games.filter(g => g.title.toLowerCase().includes(q));
             renderGames(filtered);
