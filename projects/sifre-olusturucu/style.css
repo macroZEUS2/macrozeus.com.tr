@@ -31,7 +31,7 @@ body {
     max-width: 450px;
     background: var(--clr-container);
     border-radius: 16px;
-    box-shadow: 5px 5px 10px rgb(255, 163, 26);
+    box-shadow: 0 0 0 3px rgb(255, 163, 26), 0 10px 30px rgba(255, 163, 26, 0.3);
 }
 
 .container h2 {

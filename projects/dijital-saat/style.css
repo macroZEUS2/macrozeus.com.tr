@@ -36,7 +36,7 @@ body {
     justify-content: center;
     gap: 16px;
     padding: 40px 30px;
-    box-shadow: 5px 5px 10px rgb(255, 163, 26);
+    box-shadow: 0 0 0 3px rgb(255, 163, 26), 0 10px 30px rgba(255, 163, 26, 0.3);
 }
 
 .date {
