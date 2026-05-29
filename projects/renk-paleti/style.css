@@ -35,7 +35,7 @@ body {
     gap: 20px;
     padding: 25px;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 0 30px rgba(255, 163, 26, 0.8);
 }
 
 .container-header {
