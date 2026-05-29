@@ -4,7 +4,7 @@
     --clr-primary: #000;
     --clr-secondary: #555555;
     --clr-header: #fff;
-    --clr-body: #696969;
+    --clr-body: #ffffff;
     --clr-btn-bg: rgb(255, 163, 26);
     --clr-btn-bg-hover: #000;
     --clr-btn-border: #000;
@@ -448,7 +448,7 @@ header.scrolled {
 .project-card img {
     height: 250px;
     width: 100%;
-    background-color: #777c85;
+    background-color: #ffffff;
     object-fit: cover;
     border-radius: 10px 10px 0 0;
     transition: transform 0.3s ease;
