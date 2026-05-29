@@ -5,36 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
-    <!-- boxicon cdn -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- custom css file -->
     <link rel="stylesheet" href="dist/style.css">
 </head>
 <body>
 
     <!-- header section -->
-    <header class="header-section">
-        <!-- header logo -->
+    <header class="header-section" id="header">
         <div class="header-logo">
             <a href="/"><span>macroCODE</span></a>
         </div>
-        <!-- header nav -->
         <div class="header-nav">
-            <!-- desktop github logo -->
             <a href="https://github.com/macroZEUS2" target="_blank">
                 <div class="github-section">
                     <div class="github-star">
-                        <span class="star-icon">
-                            <i class='bx bxs-star'></i>
-                        </span>
+                        <span class="star-icon"><i class='bx bxs-star'></i></span>
                         <span class="star-count"></span>
                     </div>
-                    <span class="github-logo">
-                        <i class='bx bxl-github'></i>
-                    </span>
+                    <span class="github-logo"><i class='bx bxl-github'></i></span>
                 </div>
             </a>
-            <!-- header menu -->
             <div class="header-menu">
                 <div class="menu-icon">
                     <span></span>
@@ -61,9 +51,9 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://api.whatsapp.com/send/?phone=905522047289&text&type=phone_number&app_absent=0">
-                            <span class="icon"><i class='bx bxl-whatsapp'></i></span>
-                            <span class="txt">WhatsApp</span>
+                        <a href="https://codepen.io/macroZEUS">
+                            <span class="icon"><i class='bx bxl-codepen'></i></span>
+                            <span class="txt">Codepen</span>
                         </a>
                     </li>
                 </ul>
@@ -71,29 +61,56 @@
         </div>
     </header>
 
-    <!-- mobile github logo -->
+    <!-- mobile github -->
     <a href="https://github.com/macroZEUS2" target="_blank">
         <div class="github-section mobile">
             <div class="github-star">
                 <span class="star-icon"><i class='bx bxs-star'></i></span>
                 <span class="star-count"></span>
             </div>
-            <span class="github-logo">
-                <i class='bx bxl-github'></i>
-            </span>
+            <span class="github-logo"><i class='bx bxl-github'></i></span>
         </div>
     </a>
 
-    <section class="container-title section">
-        <div class="main">
-            Muhammet Ali Alçı'nın projeleri
-        </div>
-        <div class="txt">
-            Web Geliştirme için HTML, CSS ve JavaScript ile Oluşturulan Projeler
+    <!-- hero section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting">Merhaba, ben</p>
+                <h1 class="hero-name">Muhammet Ali Alçı</h1>
+                <p class="hero-title">Web Geliştirici</p>
+                <p class="hero-desc">HTML, CSS ve JavaScript ile projeler geliştiriyorum. Aşağıda projelerimi inceleyebilirsiniz.</p>
+                <div class="hero-socials">
+                    <a href="https://github.com/macroZEUS2" target="_blank" class="social-btn">
+                        <i class='bx bxl-github'></i>
+                    </a>
+                    <a href="https://www.instagram.com/muhammetalialc/" target="_blank" class="social-btn">
+                        <i class='bx bxl-instagram-alt'></i>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCkbljdiofp3TwW-yWCuIo3Q" target="_blank" class="social-btn">
+                        <i class='bx bxl-youtube'></i>
+                    </a>
+                    <a href="https://steamcommunity.com/id/macroZEUS" target="_blank" class="social-btn">
+                        <i class='bx bxl-steam'></i>
+                    </a>
+                    <a href="https://codepen.io/macroZEUS" target="_blank" class="social-btn">
+                        <i class='bx bxl-codepen'></i>
+                    </a>
+                </div>
+                <a href="#projects" class="hero-btn">Projeleri Gör <i class='bx bx-chevron-down'></i></a>
+            </div>
+            <div class="hero-image">
+                <img src="https://r.resimlink.com/mrKkOeB.jpeg" alt="Muhammet Ali Alçı">
+            </div>
         </div>
     </section>
 
-    <section class="project-section section">
+    <!-- projects section -->
+    <section class="project-section section" id="projects">
+        <div class="section-title">
+            <h2>Projeler</h2>
+            <p>Web Geliştirme için HTML, CSS ve JavaScript ile Oluşturulan Projeler</p>
+        </div>
         <div class="project-list"></div>
     </section>
 
@@ -102,9 +119,7 @@
         <div class="footer-section section">
             <div class="attribute">
                 <p>&copy; 2023 macroCODE</p>
-                <p>Designed by
-                    <a href="https://www.instagram.com/muhammetalialc">Muhammet Ali Alçı</a>
-                </p>
+                <p>Designed by <a href="https://www.instagram.com/muhammetalialc">Muhammet Ali Alçı</a></p>
             </div>
         </div>
     </footer>

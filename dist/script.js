@@ -2,6 +2,16 @@
 const menuIcon = document.querySelector('.menu-icon');
 const menuList = document.querySelector('.menu-list');
 
+// header scroll efekti
+window.addEventListener('scroll', () => {
+    const header = document.getElementById('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
 menuIcon.addEventListener("click", () => {
     menuIcon.classList.toggle("active");
     menuList.classList.toggle("active");
