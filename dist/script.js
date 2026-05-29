@@ -130,21 +130,13 @@ function startTimer() {
 }
 document.addEventListener('DOMContentLoaded', startTimer);
 
-// scroll reveal
-const animateElement = (element, delay, distance, duration, origin) => {
-    const sr = ScrollReveal({
-        delay: delay,
-        distance: distance,
-        duration: duration,
-        easing: 'ease',
-        origin: origin,
-    });
-    sr.reveal(element);
-};
-
-setTimeout(() => {
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach((project, index) => {
-        animateElement(project, 100 + index * 50, '30px', 400, 'bottom');
-    });
-}, 50);
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`;
+    setTimeout(() => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+    }, 50);
+});

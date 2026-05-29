@@ -304,7 +304,6 @@ header {
     overflow: hidden;
 }
 .project-list {
-    min-height: 100vh;
     padding: 1rem;
     text-align: center;
     margin-bottom: 1rem;
