@@ -87,13 +87,18 @@ document.addEventListener('DOMContentLoaded', startTimer);
 
 const projectCards = document.querySelectorAll('.project-card');
 projectCards.forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`;
+card.style.opacity = '0';
+card.style.transform = 'translateY(30px)';
+card.style.transition = `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`;
+setTimeout(() => {
+    card.style.opacity = '1';
+    card.style.transform = 'translateY(0)';
+    const clearDelay = 400 + index * 50 + 50;
     setTimeout(() => {
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-    }, 50);
+        card.style.transform = '';
+        card.style.transition = '';
+    }, clearDelay);
+}, 50);
 });
 
 fetch('projects/games/data/games.json')
