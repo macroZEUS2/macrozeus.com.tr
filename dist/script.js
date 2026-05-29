@@ -18,10 +18,10 @@ menuIcon.addEventListener("click", () => {
 
 const projects = [
     { name: 'Renk Paleti', image: 'https://r.resimlink.com/x2IGXi1zP.png', link: 'projects/renk-paleti/' },
-    { name: 'Dijital Saat', image: 'https://r.resimlink.com/m4qlQX6c.png', link: 'projects/dijital-saat/' },
-    { name: 'QR Kod Oluşturucu', image: 'https://r.resimlink.com/QmfqoM.png', link: 'projects/qr-kod-olusturucu/' },
+    { name: 'Dijital Saat', image: 'https://r.resimlink.com/0TwrfX_Kai.png', link: 'projects/dijital-saat/' },
+    { name: 'QR Kod Oluşturucu', image: 'https://r.resimlink.com/5iq8Pc.png', link: 'projects/qr-kod-olusturucu/' },
     { name: 'Döviz Çevirici', image: 'https://r.resimlink.com/4etWJwLY.png', link: 'projects/doviz-cevirici/' },
-    { name: 'Şifre Oluşturucu', image: 'https://r.resimlink.com/fMNTcYZ9.png', link: 'projects/sifre-olusturucu/' },
+    { name: 'Şifre Oluşturucu', image: 'https://r.resimlink.com/oblXfusPa.png', link: 'projects/sifre-olusturucu/' },
     { name: 'Hesap Makinesi', image: 'https://r.resimlink.com/tB8qvGCpbK.png', link: 'projects/hesap-makinesi/' },
     { name: 'Hava Durumu', image: 'https://r.resimlink.com/Dask8L-c.png', link: 'projects/hava-durumu/' },
 ];
