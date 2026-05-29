@@ -66,20 +66,15 @@ projects.forEach((project) => {
     projectList.appendChild(card);
 });
 
-const star = document.querySelectorAll('.star-count');
 let starCount = 0;
 
 function starUp() {
     starCount++;
-    star.forEach((starSpan) => {
+    document.querySelectorAll('.star-count').forEach((starSpan) => {
         starSpan.textContent = starCount;
     });
     if (starCount === projects.length) {
         clearInterval(timerInterval);
-        // Tüm star-count span'larını güncelle (badge dahil)
-        document.querySelectorAll('.star-count').forEach(el => {
-            el.textContent = projects.length;
-        });
     }
 }
 
