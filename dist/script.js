@@ -83,6 +83,7 @@ function startTimer() {
     timerInterval = setInterval(starUp, 100);
 }
 startTimer();
+console.log('star-count elements:', document.querySelectorAll('.star-count').length);
 
 const projectCards = document.querySelectorAll('.project-card');
 projectCards.forEach((card, index) => {
