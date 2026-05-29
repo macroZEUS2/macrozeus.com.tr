@@ -76,6 +76,10 @@ function starUp() {
     });
     if (starCount === projects.length) {
         clearInterval(timerInterval);
+        // Tüm star-count span'larını güncelle (badge dahil)
+        document.querySelectorAll('.star-count').forEach(el => {
+            el.textContent = projects.length;
+        });
     }
 }
 
