@@ -183,4 +183,9 @@ fetch('projects/games/data/games.json')
 
         renderGames(games);
 
-        gameSearch.addEventListener('input', () =>
+gameSearch.addEventListener('input', () => {
+            const q = gameSearch.value.toLowerCase();
+            const filtered = games.filter(g => g.title.toLowerCase().includes(q));
+            renderGames(filtered);
+        });
+    });
