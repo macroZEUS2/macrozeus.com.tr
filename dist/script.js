@@ -82,7 +82,7 @@ let timerInterval;
 function startTimer() {
     timerInterval = setInterval(starUp, 100);
 }
-document.addEventListener('DOMContentLoaded', startTimer);
+startTimer();
 
 const projectCards = document.querySelectorAll('.project-card');
 projectCards.forEach((card, index) => {
