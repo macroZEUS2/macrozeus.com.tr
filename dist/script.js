@@ -144,33 +144,43 @@ fetch('projects/games/data/games.json')
     .then(r => r.json())
     .then(games => {
         const gameList = document.getElementById('gameList');
-        games.forEach(g => {
-            const card = document.createElement('div');
-            card.classList.add('project-card');
+        const gameSearch = document.getElementById('gameSearch');
 
-            const img = document.createElement('img');
-            img.src = g.thumb;
-            img.alt = g.title;
+        function renderGames(list) {
+            gameList.innerHTML = '';
+            list.forEach(g => {
+                const card = document.createElement('div');
+                card.classList.add('project-card');
 
-            const details = document.createElement('div');
-            details.classList.add('project-details');
+                const img = document.createElement('img');
+                img.src = g.thumb;
+                img.alt = g.title;
+                img.style.height = '250px';
+                img.style.objectFit = 'cover';
 
-            const title = document.createElement('h3');
-            title.textContent = g.title;
+                const details = document.createElement('div');
+                details.classList.add('project-details');
 
-            const btnGroup = document.createElement('div');
-            btnGroup.classList.add('btn-gruop');
+                const title = document.createElement('h3');
+                title.textContent = g.title;
 
-            const btn = document.createElement('a');
-            btn.textContent = 'Oyna';
-            btn.href = `projects/games/game.html?id=${g.id}`;
-            btn.classList.add('goruntule-btn');
+                const btnGroup = document.createElement('div');
+                btnGroup.classList.add('btn-gruop');
 
-            btnGroup.appendChild(btn);
-            details.appendChild(title);
-            details.appendChild(btnGroup);
-            card.appendChild(img);
-            card.appendChild(details);
-            gameList.appendChild(card);
-        });
-    });
+                const btn = document.createElement('a');
+                btn.textContent = 'Oyna';
+                btn.href = `projects/games/game.html?id=${g.id}`;
+                btn.classList.add('goruntule-btn');
+
+                btnGroup.appendChild(btn);
+                details.appendChild(title);
+                details.appendChild(btnGroup);
+                card.appendChild(img);
+                card.appendChild(details);
+                gameList.appendChild(card);
+            });
+        }
+
+        renderGames(games);
+
+        gameSearch.addEventListener('input', () =>
