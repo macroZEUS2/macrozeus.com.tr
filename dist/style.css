@@ -508,3 +508,29 @@ footer a { color: var(--clr-primary); }
 @media (max-width: 400px) {
     .project-list { grid-template-columns: 1fr; }
 }
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.hero-btn.secondary {
+    background-color: #555;
+}
+
+.hero-btn.secondary:hover {
+    background-color: var(--clr-btn-bg);
+}
+
+.hero-btn.outline {
+    background-color: transparent;
+    border: 2px solid var(--clr-btn-bg);
+    color: var(--clr-btn-bg);
+}
+
+.hero-btn.outline:hover {
+    background-color: var(--clr-btn-bg);
+    color: #fff;
+}

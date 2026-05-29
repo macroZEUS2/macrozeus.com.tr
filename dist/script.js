@@ -20,18 +20,6 @@ menuIcon.addEventListener("click", () => {
 // project details
 const projects = [
     {
-        name: 'Server Homepage',
-        image: 'https://cdn-icons-png.flaticon.com/512/25/25694.png',
-        link: 'http://home.macrozeus.com.tr',
-        isHomepage: true,
-    },
-    {
-        name: 'Oyunlar',
-        image: 'https://cdn-icons-png.flaticon.com/512/686/686589.png',
-        link: 'projects/games/',
-        isGames: true,
-    },
-    {
         name: 'Renk Paleti',
         image: 'https://r.resimlink.com/x2IGXi1zP.png',
         link: 'projects/renk-paleti/',
@@ -150,3 +138,39 @@ projectCards.forEach((card, index) => {
         card.style.transform = 'translateY(0)';
     }, 50);
 });
+
+// games section
+fetch('projects/games/data/games.json')
+    .then(r => r.json())
+    .then(games => {
+        const gameList = document.getElementById('gameList');
+        games.forEach(g => {
+            const card = document.createElement('div');
+            card.classList.add('project-card');
+
+            const img = document.createElement('img');
+            img.src = g.thumb;
+            img.alt = g.title;
+
+            const details = document.createElement('div');
+            details.classList.add('project-details');
+
+            const title = document.createElement('h3');
+            title.textContent = g.title;
+
+            const btnGroup = document.createElement('div');
+            btnGroup.classList.add('btn-gruop');
+
+            const btn = document.createElement('a');
+            btn.textContent = 'Oyna';
+            btn.href = `projects/games/game.html?id=${g.id}`;
+            btn.classList.add('goruntule-btn');
+
+            btnGroup.appendChild(btn);
+            details.appendChild(title);
+            details.appendChild(btnGroup);
+            card.appendChild(img);
+            card.appendChild(details);
+            gameList.appendChild(card);
+        });
+    });
