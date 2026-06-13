@@ -1,24 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-:root {
-    --clr-primary: #000;
-    --clr-secondary: #555555;
-    --clr-header: #fff;
-    --clr-body: #696969;
-    --clr-btn-bg: rgb(255, 163, 26);
-    --clr-btn-bg-hover: #000;
-    --clr-btn-border: #000;
-    --clr-text-color: #fff;
-    --body-font-family: 'Poppins', sans-serif;
-    --fs-header-logo: 25px;
-    --fs-project-card-header: 18px;
-    --fs-project-card-btn-txt: 14px;
+:root { 
+    --clr-primary: #000; --clr-secondary: #555555; --clr-header: #fff; --clr-body: #696969; 
+    --clr-btn-bg: rgb(255, 163, 26); --clr-btn-bg-hover: #000; --clr-text-color: #fff; 
 }
 
-/* TEMA DEĞİŞKENLERİ (Modlar için) */
-.theme-default-light { --clr-primary: #000; --clr-secondary: #555555; --clr-header: #fff; --clr-body: #696969; --clr-btn-bg: rgb(255, 163, 26); --clr-btn-bg-hover: #000; --clr-text-color: #fff; }
-.theme-default-dark { --clr-primary: #fff; --clr-secondary: #aaa; --clr-header: #000; --clr-body: #333; --clr-btn-bg: rgb(255, 163, 26); --clr-btn-bg-hover: #fff; --clr-text-color: #eee; }
-.theme-minimalist-light { --clr-primary: #2563eb; --clr-secondary: #555; --clr-header: #fff; --clr-body: #F3F4F6; --clr-btn-bg: #3B82F6; --clr-btn-bg-hover: #2563eb; --clr-text-color: #1F2937; }
+/* macroZEUS Default */
+.theme-macrozeus-light { --clr-primary: #000; --clr-secondary: #555555; --clr-header: #fff; --clr-body: #696969; --clr-btn-bg: rgb(255, 163, 26); --clr-btn-bg-hover: #000; --clr-text-color: #fff; }
+.theme-macrozeus-dark { --clr-primary: #fff; --clr-secondary: #aaa; --clr-header: #1f1f1f; --clr-body: #121212; --clr-btn-bg: rgb(255, 163, 26); --clr-btn-bg-hover: #fff; --clr-text-color: #E9ECEF; }
+
+/* Diğer Temalar (Işık/Karanlık) */
+.theme-minimalist-light { --clr-primary: #2563eb; --clr-secondary: #555; --clr-header: #fff; --clr-body: #f3f4f6; --clr-btn-bg: #3B82F6; --clr-btn-bg-hover: #2563eb; --clr-text-color: #1F2937; }
 .theme-minimalist-dark { --clr-primary: #3B82F6; --clr-secondary: #ccc; --clr-header: #1f1f1f; --clr-body: #121212; --clr-btn-bg: #3B82F6; --clr-btn-bg-hover: #2563eb; --clr-text-color: #E9ECEF; }
 .theme-paramedic-light { --clr-primary: #2C7A7B; --clr-secondary: #4A5568; --clr-header: #fff; --clr-body: #E6FFFA; --clr-btn-bg: #319795; --clr-btn-bg-hover: #2C7A7B; --clr-text-color: #1A202C; }
 .theme-paramedic-dark { --clr-primary: #4FD1C5; --clr-secondary: #CBD5E0; --clr-header: #2D3748; --clr-body: #1A202C; --clr-btn-bg: #319795; --clr-btn-bg-hover: #2C7A7B; --clr-text-color: #EDF2F7; }
@@ -30,22 +22,6 @@
 .theme-purple-dark { --clr-primary: #a78bfa; --clr-secondary: #ddd; --clr-header: #2e1065; --clr-body: #1a0a3a; --clr-btn-bg: #8b5cf6; --clr-btn-bg-hover: #a78bfa; --clr-text-color: #f3e8ff; }
 .theme-crimson-light { --clr-primary: #b91c1c; --clr-secondary: #991b1b; --clr-header: #fff; --clr-body: #FEF2F2; --clr-btn-bg: #ef4444; --clr-btn-bg-hover: #b91c1c; --clr-text-color: #450a0a; }
 .theme-crimson-dark { --clr-primary: #f87171; --clr-secondary: #fecaca; --clr-header: #450a0a; --clr-body: #2a0505; --clr-btn-bg: #ef4444; --clr-btn-bg-hover: #f87171; --clr-text-color: #fee2e2; }
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    min-height: 100vh;
-    width: 100%;
-    font-family: var(--body-font-family);
-    background-color: var(--clr-body);
-    color: var(--clr-text-color);
-    position: relative;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
 
 img { max-width: 100%; max-height: 100%; }
 li { list-style-type: none; }

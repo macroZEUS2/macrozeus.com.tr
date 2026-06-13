@@ -1,8 +1,6 @@
-// Sayfa tamamen yüklendiğinde çalıştır
 document.addEventListener('DOMContentLoaded', () => {
-
     // --- Global Değişkenler ve Ayarlar ---
-    let currentTheme = localStorage.getItem('siteTheme') || 'default';
+    let currentTheme = localStorage.getItem('siteTheme') || 'macrozeus';
     let currentMode = localStorage.getItem('siteMode') || 'light';
 
     const projects = [
@@ -27,27 +25,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- TEMA VE MOD SİSTEMİ ---
     function updateSiteAppearance() {
-        // Body class'ını güncelle (ör: theme-paramedic-dark)
-        document.body.className = `theme-${currentTheme}-${currentMode}`;
-        
-        // Menüdeki mod ikonunu ve yazısını güncelle
-        if (currentMode === 'dark') {
-            modeIcon.className = 'bx bx-moon';
-            modeText.textContent = 'Koyu Mod';
+        // Theme-Default ise sadece theme-macrozeus class'ını ekle, değilse theme-isim-mod
+        if(currentTheme === 'macrozeus') {
+            document.body.className = 'theme-macrozeus';
         } else {
-            modeIcon.className = 'bx bx-sun';
-            modeText.textContent = 'Açık Mod';
+            document.body.className = `theme-${currentTheme}-${currentMode}`;
+        }
+        
+        if (modeIcon && modeText) {
+            modeIcon.className = (currentMode === 'dark') ? 'bx bx-moon' : 'bx bx-sun';
+            modeText.textContent = (currentMode === 'dark') ? 'Koyu Mod' : 'Açık Mod';
         }
 
-        // Seçimleri hafızaya kaydet
         localStorage.setItem('siteTheme', currentTheme);
         localStorage.setItem('siteMode', currentMode);
     }
 
-    // Başlangıçta temayı uygula
+    // Başlangıç
     updateSiteAppearance();
 
-    // Tema Seçimi (Menü içindeki tema linkleri)
+    // Tema Seçimi
     themeSelectors.forEach(selector => {
         selector.addEventListener('click', (e) => {
             e.preventDefault();
@@ -56,30 +53,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mod Değiştirme (Menü içindeki Güneş/Ay)
-    modeToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        currentMode = (currentMode === 'light') ? 'dark' : 'light';
-        updateSiteAppearance();
-    });
+    // Mod Değiştirme
+    if(modeToggle) {
+        modeToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentMode = (currentMode === 'light') ? 'dark' : 'light';
+            updateSiteAppearance();
+        });
+    }
 
     // --- MENU TOGGLE ---
-    menuIcon.addEventListener("click", () => {
-        menuIcon.classList.toggle("active");
-        menuList.classList.toggle("active");
-    });
+    if(menuIcon) {
+        menuIcon.addEventListener("click", () => {
+            menuIcon.classList.toggle("active");
+            menuList.classList.toggle("active");
+        });
+    }
 
     // --- SCROLL HEADER ---
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        if (header) {
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
         }
     });
 
-    // --- PROJELERİ LİSTELEME VE YILDIZ SAYACI ---
-    if (projectList) { // Sadece proje listesi olan sayfalarda çalıştır
+    // --- PROJELERİ LİSTELEME ---
+    if (projectList) {
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
@@ -103,37 +103,25 @@ document.addEventListener('DOMContentLoaded', () => {
             projectList.appendChild(card);
         });
 
-        // Yıldız Sayacı (Orijinal kodun)
+        // Yıldız Sayacı
         let starCount = 0;
         const starCounts = document.querySelectorAll('.star-count');
+        let timerInterval = setInterval(() => {
+            starCount++;
+            starCounts.forEach(starSpan => starSpan.textContent = starCount);
+            if (starCount >= projects.length) clearInterval(timerInterval);
+        }, 100);
 
-        function starUp() {
-            if (starCounts.length > 0) {
-                starCount++;
-                starCounts.forEach(starSpan => starSpan.textContent = starCount);
-                
-                if (starCount >= projects.length) {
-                    clearInterval(timerInterval);
-                }
-            }
-        }
-        let timerInterval = setInterval(starUp, 100);
-
-        // Proje Kartı Animasyonları (Düzeltildi)
+        // Proje Kartı Animasyonları
         const projectCards = document.querySelectorAll('.project-card');
         projectCards.forEach((card, index) => {
             card.style.opacity = '0';
             card.style.transform = 'translateY(30px)';
             card.style.transition = `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`;
-            
             setTimeout(() => {
                 card.style.opacity = '1';
                 card.style.transform = 'translateY(0)';
-                
-                // Hover efektinin düzgün çalışması için transition'ı temizle
-                setTimeout(() => {
-                    card.style.transition = ''; 
-                }, 500); 
+                setTimeout(() => card.style.transition = '', 500);
             }, 50);
         });
     }
