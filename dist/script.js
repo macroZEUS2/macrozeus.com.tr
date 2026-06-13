@@ -1,7 +1,8 @@
 // Temayı yükle
 function setTheme(themeName) {
-    document.body.className = themeName; // Sınıfı direkt ata
+    document.body.className = themeName; 
     localStorage.setItem('siteTheme', themeName);
+}
 }
 
 // Sayfa yüklendiğinde hafızadaki temayı uygula
