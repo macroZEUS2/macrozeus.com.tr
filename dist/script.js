@@ -1075,6 +1075,3 @@ projectCards.forEach((card, index) => {
         }, clearDelay);
     }, 50);
 });
-
-// ========== TEMA DEĞİŞİMİNDE PROJE SAYFASINA UYGULA ==========
-// Alt sayfalarda tema localStorage'dan okunur, bu script dahil edilirse otomatik çalışır
