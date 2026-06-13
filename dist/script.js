@@ -1,3 +1,15 @@
+// Temayı yükle
+function setTheme(themeName) {
+    document.body.className = themeName; // Sınıfı direkt ata
+    localStorage.setItem('siteTheme', themeName);
+}
+
+// Sayfa yüklendiğinde hafızadaki temayı uygula
+document.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('siteTheme') || 'theme-default';
+    setTheme(savedTheme);
+});
+
 // menu toggle
 const menuIcon = document.querySelector('.menu-icon');
 const menuList = document.querySelector('.menu-list');
