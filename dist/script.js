@@ -12,6 +12,7 @@ const THEMES = {
             '--clr-btn-bg': '#ffa31a',
             '--clr-btn-bg-hover': '#e08800',
             '--clr-btn-border': '#ffa31a',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#222222',
             '--clr-card-shadow': 'rgba(255,163,26,0.25)',
             '--clr-hero-text': '#ffffff',
@@ -23,10 +24,10 @@ const THEMES = {
             '--clr-social-icon': '#ffa31a',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#ffa31a',
-            '--clr-github-bg': '#1a1a1a',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#333333',
-            '--clr-github-border': 'rgba(255,255,255,0.2)',
+            '--clr-github-hover': '#222222',
+            '--clr-github-border': 'rgba(255,255,255,0.15)',
             '--clr-hero-glow': 'rgba(255,163,26,0.45)',
             '--clr-card-title': '#ffa31a',
             '--clr-menu-bg': '#1a1a1a',
@@ -45,6 +46,7 @@ const THEMES = {
             '--clr-btn-bg': '#111111',
             '--clr-btn-bg-hover': '#333333',
             '--clr-btn-border': '#111111',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#ffffff',
             '--clr-card-shadow': 'rgba(0,0,0,0.10)',
             '--clr-hero-text': '#111111',
@@ -56,7 +58,7 @@ const THEMES = {
             '--clr-social-icon': '#333333',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#111111',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#333333',
             '--clr-github-border': 'transparent',
@@ -74,6 +76,7 @@ const THEMES = {
             '--clr-btn-bg': '#eeeeee',
             '--clr-btn-bg-hover': '#cccccc',
             '--clr-btn-border': '#eeeeee',
+            '--clr-btn-text': '#111111',
             '--clr-card-bg': '#222222',
             '--clr-card-shadow': 'rgba(255,255,255,0.05)',
             '--clr-hero-text': '#eeeeee',
@@ -85,7 +88,7 @@ const THEMES = {
             '--clr-social-icon': '#cccccc',
             '--clr-social-icon-hover': '#111111',
             '--clr-accent': '#eeeeee',
-            '--clr-github-bg': '#1a1a1a',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#2a2a2a',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
@@ -107,6 +110,7 @@ const THEMES = {
             '--clr-btn-bg': '#2563eb',
             '--clr-btn-bg-hover': '#1d4ed8',
             '--clr-btn-border': '#2563eb',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#ffffff',
             '--clr-card-shadow': 'rgba(37,99,235,0.15)',
             '--clr-hero-text': '#0f172a',
@@ -118,7 +122,7 @@ const THEMES = {
             '--clr-social-icon': '#1d4ed8',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#2563eb',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'transparent',
@@ -136,6 +140,7 @@ const THEMES = {
             '--clr-btn-bg': '#3b82f6',
             '--clr-btn-bg-hover': '#60a5fa',
             '--clr-btn-border': '#3b82f6',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#111f3a',
             '--clr-card-shadow': 'rgba(59,130,246,0.15)',
             '--clr-hero-text': '#e0eaff',
@@ -147,7 +152,7 @@ const THEMES = {
             '--clr-social-icon': '#60a5fa',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#3b82f6',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
@@ -169,6 +174,7 @@ const THEMES = {
             '--clr-btn-bg': '#16a34a',
             '--clr-btn-bg-hover': '#15803d',
             '--clr-btn-border': '#16a34a',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#ffffff',
             '--clr-card-shadow': 'rgba(22,163,74,0.15)',
             '--clr-hero-text': '#052e16',
@@ -180,7 +186,7 @@ const THEMES = {
             '--clr-social-icon': '#15803d',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#16a34a',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'transparent',
@@ -198,6 +204,7 @@ const THEMES = {
             '--clr-btn-bg': '#22c55e',
             '--clr-btn-bg-hover': '#4ade80',
             '--clr-btn-border': '#22c55e',
+            '--clr-btn-text': '#052e16',
             '--clr-card-bg': '#0a3d1a',
             '--clr-card-shadow': 'rgba(34,197,94,0.15)',
             '--clr-hero-text': '#dcfce7',
@@ -209,7 +216,7 @@ const THEMES = {
             '--clr-social-icon': '#4ade80',
             '--clr-social-icon-hover': '#052e16',
             '--clr-accent': '#22c55e',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
@@ -231,6 +238,7 @@ const THEMES = {
             '--clr-btn-bg': '#9333ea',
             '--clr-btn-bg-hover': '#7c3aed',
             '--clr-btn-border': '#9333ea',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#ffffff',
             '--clr-card-shadow': 'rgba(147,51,234,0.15)',
             '--clr-hero-text': '#3b0764',
@@ -242,7 +250,7 @@ const THEMES = {
             '--clr-social-icon': '#7c3aed',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#9333ea',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'transparent',
@@ -260,6 +268,7 @@ const THEMES = {
             '--clr-btn-bg': '#a855f7',
             '--clr-btn-bg-hover': '#c084fc',
             '--clr-btn-border': '#a855f7',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#200840',
             '--clr-card-shadow': 'rgba(168,85,247,0.15)',
             '--clr-hero-text': '#f3e8ff',
@@ -271,7 +280,7 @@ const THEMES = {
             '--clr-social-icon': '#c084fc',
             '--clr-social-icon-hover': '#f3e8ff',
             '--clr-accent': '#a855f7',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
@@ -293,6 +302,7 @@ const THEMES = {
             '--clr-btn-bg': '#ea580c',
             '--clr-btn-bg-hover': '#c2410c',
             '--clr-btn-border': '#ea580c',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#ffffff',
             '--clr-card-shadow': 'rgba(234,88,12,0.15)',
             '--clr-hero-text': '#431407',
@@ -304,7 +314,7 @@ const THEMES = {
             '--clr-social-icon': '#c2410c',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#ea580c',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'transparent',
@@ -322,6 +332,7 @@ const THEMES = {
             '--clr-btn-bg': '#f97316',
             '--clr-btn-bg-hover': '#fb923c',
             '--clr-btn-border': '#f97316',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#2c1200',
             '--clr-card-shadow': 'rgba(249,115,22,0.15)',
             '--clr-hero-text': '#ffedd5',
@@ -333,7 +344,7 @@ const THEMES = {
             '--clr-social-icon': '#fb923c',
             '--clr-social-icon-hover': '#ffedd5',
             '--clr-accent': '#f97316',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
@@ -355,6 +366,7 @@ const THEMES = {
             '--clr-btn-bg': '#e11d48',
             '--clr-btn-bg-hover': '#be123c',
             '--clr-btn-border': '#e11d48',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#ffffff',
             '--clr-card-shadow': 'rgba(225,29,72,0.15)',
             '--clr-hero-text': '#4c0519',
@@ -366,7 +378,7 @@ const THEMES = {
             '--clr-social-icon': '#be123c',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#e11d48',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'transparent',
@@ -384,6 +396,7 @@ const THEMES = {
             '--clr-btn-bg': '#f43f5e',
             '--clr-btn-bg-hover': '#fb7185',
             '--clr-btn-border': '#f43f5e',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#2d0820',
             '--clr-card-shadow': 'rgba(244,63,94,0.15)',
             '--clr-hero-text': '#ffe4ec',
@@ -395,7 +408,7 @@ const THEMES = {
             '--clr-social-icon': '#fda4af',
             '--clr-social-icon-hover': '#ffe4ec',
             '--clr-accent': '#f43f5e',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
@@ -417,6 +430,7 @@ const THEMES = {
             '--clr-btn-bg': '#475569',
             '--clr-btn-bg-hover': '#334155',
             '--clr-btn-border': '#475569',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#ffffff',
             '--clr-card-shadow': 'rgba(71,85,105,0.12)',
             '--clr-hero-text': '#0f172a',
@@ -428,7 +442,7 @@ const THEMES = {
             '--clr-social-icon': '#334155',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#64748b',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'transparent',
@@ -446,6 +460,7 @@ const THEMES = {
             '--clr-btn-bg': '#64748b',
             '--clr-btn-bg-hover': '#94a3b8',
             '--clr-btn-border': '#64748b',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#1e293b',
             '--clr-card-shadow': 'rgba(100,116,139,0.15)',
             '--clr-hero-text': '#e2e8f0',
@@ -457,7 +472,7 @@ const THEMES = {
             '--clr-social-icon': '#94a3b8',
             '--clr-social-icon-hover': '#e2e8f0',
             '--clr-accent': '#94a3b8',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
@@ -479,6 +494,7 @@ const THEMES = {
             '--clr-btn-bg': '#0d9488',
             '--clr-btn-bg-hover': '#0f766e',
             '--clr-btn-border': '#0d9488',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#ffffff',
             '--clr-card-shadow': 'rgba(13,148,136,0.15)',
             '--clr-hero-text': '#042f2e',
@@ -490,7 +506,7 @@ const THEMES = {
             '--clr-social-icon': '#0f766e',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#0d9488',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'transparent',
@@ -508,6 +524,7 @@ const THEMES = {
             '--clr-btn-bg': '#14b8a6',
             '--clr-btn-bg-hover': '#2dd4bf',
             '--clr-btn-border': '#14b8a6',
+            '--clr-btn-text': '#042f2e',
             '--clr-card-bg': '#063d3a',
             '--clr-card-shadow': 'rgba(20,184,166,0.15)',
             '--clr-hero-text': '#ccfbf1',
@@ -519,7 +536,7 @@ const THEMES = {
             '--clr-social-icon': '#2dd4bf',
             '--clr-social-icon-hover': '#042f2e',
             '--clr-accent': '#14b8a6',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
@@ -541,6 +558,7 @@ const THEMES = {
             '--clr-btn-bg': '#d97706',
             '--clr-btn-bg-hover': '#b45309',
             '--clr-btn-border': '#d97706',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#ffffff',
             '--clr-card-shadow': 'rgba(217,119,6,0.15)',
             '--clr-hero-text': '#451a03',
@@ -552,7 +570,7 @@ const THEMES = {
             '--clr-social-icon': '#b45309',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#d97706',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'transparent',
@@ -570,6 +588,7 @@ const THEMES = {
             '--clr-btn-bg': '#f59e0b',
             '--clr-btn-bg-hover': '#fbbf24',
             '--clr-btn-border': '#f59e0b',
+            '--clr-btn-text': '#1c0f00',
             '--clr-card-bg': '#2d1a00',
             '--clr-card-shadow': 'rgba(245,158,11,0.15)',
             '--clr-hero-text': '#fef3c7',
@@ -581,7 +600,7 @@ const THEMES = {
             '--clr-social-icon': '#fcd34d',
             '--clr-social-icon-hover': '#1c0f00',
             '--clr-accent': '#f59e0b',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
@@ -603,6 +622,7 @@ const THEMES = {
             '--clr-btn-bg': '#4f46e5',
             '--clr-btn-bg-hover': '#4338ca',
             '--clr-btn-border': '#4f46e5',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#ffffff',
             '--clr-card-shadow': 'rgba(79,70,229,0.15)',
             '--clr-hero-text': '#1e1b4b',
@@ -614,7 +634,7 @@ const THEMES = {
             '--clr-social-icon': '#4338ca',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#4f46e5',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'transparent',
@@ -632,6 +652,7 @@ const THEMES = {
             '--clr-btn-bg': '#6366f1',
             '--clr-btn-bg-hover': '#818cf8',
             '--clr-btn-border': '#6366f1',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#1a1760',
             '--clr-card-shadow': 'rgba(99,102,241,0.15)',
             '--clr-hero-text': '#e0e7ff',
@@ -643,7 +664,7 @@ const THEMES = {
             '--clr-social-icon': '#a5b4fc',
             '--clr-social-icon-hover': '#e0e7ff',
             '--clr-accent': '#6366f1',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
@@ -665,6 +686,7 @@ const THEMES = {
             '--clr-btn-bg': '#2d3748',
             '--clr-btn-bg-hover': '#1a202c',
             '--clr-btn-border': '#2d3748',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#ffffff',
             '--clr-card-shadow': 'rgba(26,32,44,0.10)',
             '--clr-hero-text': '#1a202c',
@@ -676,7 +698,7 @@ const THEMES = {
             '--clr-social-icon': '#2d3748',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#4a5568',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'transparent',
@@ -694,6 +716,7 @@ const THEMES = {
             '--clr-btn-bg': '#374151',
             '--clr-btn-bg-hover': '#4b5563',
             '--clr-btn-border': '#374151',
+            '--clr-btn-text': '#f9fafb',
             '--clr-card-bg': '#111827',
             '--clr-card-shadow': 'rgba(249,250,251,0.05)',
             '--clr-hero-text': '#f9fafb',
@@ -705,7 +728,7 @@ const THEMES = {
             '--clr-social-icon': '#9ca3af',
             '--clr-social-icon-hover': '#f9fafb',
             '--clr-accent': '#6b7280',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
@@ -727,6 +750,7 @@ const THEMES = {
             '--clr-btn-bg': '#c026d3',
             '--clr-btn-bg-hover': '#a21caf',
             '--clr-btn-border': '#c026d3',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#ffffff',
             '--clr-card-shadow': 'rgba(192,38,211,0.15)',
             '--clr-hero-text': '#4a044e',
@@ -738,7 +762,7 @@ const THEMES = {
             '--clr-social-icon': '#a21caf',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#c026d3',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'transparent',
@@ -756,6 +780,7 @@ const THEMES = {
             '--clr-btn-bg': '#d946ef',
             '--clr-btn-bg-hover': '#e879f9',
             '--clr-btn-border': '#d946ef',
+            '--clr-btn-text': '#ffffff',
             '--clr-card-bg': '#2e0040',
             '--clr-card-shadow': 'rgba(217,70,239,0.15)',
             '--clr-hero-text': '#fae8ff',
@@ -767,7 +792,7 @@ const THEMES = {
             '--clr-social-icon': '#e879f9',
             '--clr-social-icon-hover': '#fae8ff',
             '--clr-accent': '#d946ef',
-            '--clr-github-bg': '#111111',
+            '--clr-github-bg': '#000000',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#222222',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
@@ -779,7 +804,7 @@ const THEMES = {
     },
 };
 
-const DEFAULT_THEME = 'monochrome';
+const DEFAULT_THEME = 'macrozeus';
 const DEFAULT_MODE = 'light';
 
 // ========== THEME APPLICATION ==========
@@ -789,50 +814,45 @@ function applyTheme(themeKey, mode) {
 
     const vars = theme.fixed ? theme.light : (theme[mode] || theme.light);
     const root = document.documentElement;
+
+    // Tüm CSS değişkenlerini uygula
     Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v));
 
-    // btn text rengi
-    const btnBg = vars['--clr-btn-bg'] || '';
-    const lightBtns = ['#ffffff', '#f5f5f5', '#dddddd', '#cccccc', '#eeeeee'];
-    const isLightBtn = lightBtns.some(c => btnBg.toLowerCase().includes(c));
-    root.style.setProperty('--clr-btn-text', isLightBtn ? '#111111' : '#ffffff');
+    // --clr-btn-text zaten her temada tanımlı, ek hesaplama gerek yok
 
+    // localStorage'a kaydet
     localStorage.setItem('macroTheme', themeKey);
     if (!theme.fixed) localStorage.setItem('macroMode', mode);
 
     updateThemeUI(themeKey, mode);
 
-    // hero image glow - tema rengine göre
+    // Hero image glow
     const heroImg = document.querySelector('.hero-image');
     if (heroImg) {
         heroImg.style.borderColor = vars['--clr-accent'];
         heroImg.style.boxShadow = `0 0 40px ${vars['--clr-hero-glow']}`;
     }
 
-    // footer link
+    // Footer link
     const footerLink = document.querySelector('footer a');
     if (footerLink) footerLink.style.color = vars['--clr-accent'];
 
-    // github butonları - her zaman siyah
-    document.querySelectorAll('.github-section').forEach(btn => {
-        btn.style.background = vars['--clr-github-bg'];
-        btn.style.color = vars['--clr-github-text'];
-        btn.style.border = `1px solid ${vars['--clr-github-border'] || 'rgba(255,255,255,0.15)'}`;
-    });
-    document.querySelectorAll('.github-logo, .github-section-text, .github-star-badge, .github-star-badge i').forEach(el => {
-        el.style.color = vars['--clr-github-text'];
-    });
-
-    // menü arka planı
+    // Menü arka planı
     const menuList = document.querySelector('.menu-list');
     if (menuList) {
         menuList.style.backgroundColor = vars['--clr-menu-bg'];
         menuList.style.borderColor = vars['--clr-menu-border'];
     }
 
-    // proje kartı başlıkları
+    // Proje kartı başlıkları
     document.querySelectorAll('.project-card h3').forEach(el => {
         el.style.color = vars['--clr-card-title'];
+    });
+
+    // Proje kartı butonları
+    document.querySelectorAll('.project-card a').forEach(el => {
+        el.style.backgroundColor = vars['--clr-btn-bg'];
+        el.style.color = vars['--clr-btn-text'];
     });
 }
 
@@ -847,8 +867,10 @@ function updateThemeUI(themeKey, mode) {
             modeToggle.style.display = 'none';
         } else {
             modeToggle.style.display = 'flex';
-            modeToggle.querySelector('.mode-light').classList.toggle('active', mode === 'light');
-            modeToggle.querySelector('.mode-dark').classList.toggle('active', mode === 'dark');
+            const lightBtn = modeToggle.querySelector('.mode-light');
+            const darkBtn = modeToggle.querySelector('.mode-dark');
+            if (lightBtn) lightBtn.classList.toggle('active', mode === 'light');
+            if (darkBtn) darkBtn.classList.toggle('active', mode === 'dark');
         }
     }
 }
@@ -874,7 +896,6 @@ function buildThemeMenu() {
     // macroZEUS - en üstte sabit
     const macrothemeKey = 'macrozeus';
     const macroTheme = THEMES[macrothemeKey];
-
     const macroLi = document.createElement('li');
     macroLi.innerHTML = `
         <div class="theme-option macrozeus-option ${currentTheme === macrothemeKey ? 'active' : ''}" data-theme="${macrothemeKey}">
@@ -889,7 +910,7 @@ function buildThemeMenu() {
     divider.innerHTML = '<div class="theme-divider"></div>';
     menuList.appendChild(divider);
 
-    // Mod toggle (macroZEUS seçili değilse göster)
+    // Mod toggle
     const modeItem = document.createElement('li');
     modeItem.innerHTML = `
         <div id="modeToggle" style="display:${currentTheme === 'macrozeus' ? 'none' : 'flex'};gap:6px;padding:4px 0;margin-bottom:4px">
@@ -946,7 +967,7 @@ function buildThemeMenu() {
     updateThemeUI(currentTheme, currentMode);
 }
 
-// ========== TEMA BAŞLATMA ==========
+// ========== TEMA BAŞLATMA (sayfanın en başında çalışır) ==========
 (function initTheme() {
     const savedTheme = getCurrentTheme();
     const savedMode = getCurrentMode();
@@ -954,11 +975,9 @@ function buildThemeMenu() {
 })();
 
 // ========== HEADER SCROLL ==========
-const menuIcon = document.querySelector('.menu-icon');
-const menuListEl = document.querySelector('.menu-list');
-
 window.addEventListener('scroll', () => {
     const header = document.getElementById('header');
+    if (!header) return;
     if (window.scrollY > 50) {
         header.classList.add('scrolled');
     } else {
@@ -966,112 +985,111 @@ window.addEventListener('scroll', () => {
     }
 });
 
-menuIcon.addEventListener("click", () => {
-    menuIcon.classList.toggle("active");
-    menuListEl.classList.toggle("active");
-});
+// ========== MENÜ AÇMA/KAPAMA ==========
+const menuIcon = document.querySelector('.menu-icon');
+const menuListEl = document.querySelector('.menu-list');
 
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.header-menu')) {
-        menuIcon.classList.remove('active');
-        menuListEl.classList.remove('active');
-    }
-});
+if (menuIcon && menuListEl) {
+    menuIcon.addEventListener('click', () => {
+        menuIcon.classList.toggle('active');
+        menuListEl.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.header-menu')) {
+            menuIcon.classList.remove('active');
+            menuListEl.classList.remove('active');
+        }
+    });
+}
 
 // ========== TEMA MENÜSÜ OLUŞTUR ==========
 buildThemeMenu();
 
-// ========== PROJELER ==========
-const projects = [
-    { name: 'Renk Paleti', image: 'renk-paleti.png', link: 'projects/renk-paleti/' },
-    { name: 'Dijital Saat', image: 'dijital-saat.png', link: 'projects/dijital-saat/' },
-    { name: 'QR Kod Oluşturucu', image: 'qr-kod-olusturucu.png', link: 'projects/qr-kod-olusturucu/' },
-    { name: 'Döviz Çevirici', image: 'doviz-cevirici.png', link: 'projects/doviz-cevirici/' },
-    { name: 'Şifre Oluşturucu', image: 'sifre-olusturucu.png', link: 'projects/sifre-olusturucu/' },
-    { name: 'Hesap Makinesi', image: 'hesap-makinesi.png', link: 'projects/hesap-makinesi/' },
-    { name: 'Hava Durumu', image: 'hava-durumu.png', link: 'projects/hava-durumu/' },
-];
-
+// ========== PROJELER (sadece ana sayfada çalışır) ==========
 const projectList = document.querySelector('.project-list');
+if (projectList) {
+    const projects = [
+        { name: 'Renk Paleti', image: 'renk-paleti.png', link: 'projects/renk-paleti/' },
+        { name: 'Dijital Saat', image: 'dijital-saat.png', link: 'projects/dijital-saat/' },
+        { name: 'QR Kod Oluşturucu', image: 'qr-kod-olusturucu.png', link: 'projects/qr-kod-olusturucu/' },
+        { name: 'Döviz Çevirici', image: 'doviz-cevirici.png', link: 'projects/doviz-cevirici/' },
+        { name: 'Şifre Oluşturucu', image: 'sifre-olusturucu.png', link: 'projects/sifre-olusturucu/' },
+        { name: 'Hesap Makinesi', image: 'hesap-makinesi.png', link: 'projects/hesap-makinesi/' },
+        { name: 'Hava Durumu', image: 'hava-durumu.png', link: 'projects/hava-durumu/' },
+    ];
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
     }
+    shuffleArray(projects);
+
+    const activeTheme = getCurrentTheme();
+    const activeMode = getCurrentMode();
+    const themeData = THEMES[activeTheme];
+    const activeVars = themeData.fixed ? themeData.light : (themeData[activeMode] || themeData.light);
+
+    projects.forEach((project) => {
+        const card = document.createElement('div');
+        card.classList.add('project-card');
+
+        const image = document.createElement('img');
+        image.src = project.image;
+        image.alt = project.name;
+
+        const projectDetails = document.createElement('div');
+        projectDetails.classList.add('project-details');
+
+        const name = document.createElement('h3');
+        name.textContent = project.name;
+        name.style.color = activeVars['--clr-card-title'];
+
+        const btngroup = document.createElement('div');
+        btngroup.classList.add('btn-gruop');
+
+        const btn = document.createElement('a');
+        btn.textContent = 'Görüntüle';
+        btn.setAttribute('href', project.link);
+        btn.style.backgroundColor = activeVars['--clr-btn-bg'];
+        btn.style.color = activeVars['--clr-btn-text'];
+
+        btngroup.appendChild(btn);
+        projectDetails.appendChild(name);
+        projectDetails.appendChild(btngroup);
+        card.appendChild(image);
+        card.appendChild(projectDetails);
+        projectList.appendChild(card);
+    });
+
+    // Kart açılış animasyonu
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`;
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+            const clearDelay = 400 + index * 50 + 50;
+            setTimeout(() => {
+                card.style.transform = '';
+                card.style.transition = '';
+            }, clearDelay);
+        }, 50);
+    });
 }
-
-shuffleArray(projects);
-
-projects.forEach((project) => {
-    const card = document.createElement('div');
-    card.classList.add('project-card');
-
-    const image = document.createElement('img');
-    image.src = project.image;
-    image.alt = project.name;
-
-    const projectDetails = document.createElement('div');
-    projectDetails.classList.add('project-details');
-
-    const name = document.createElement('h3');
-    name.textContent = project.name;
-
-    const btngroup = document.createElement('div');
-    btngroup.classList.add('btn-gruop');
-
-    const btn = document.createElement('a');
-    btn.textContent = 'Görüntüle';
-    btn.setAttribute('href', project.link);
-
-    btngroup.appendChild(btn);
-    projectDetails.appendChild(name);
-    projectDetails.appendChild(btngroup);
-    card.appendChild(image);
-    card.appendChild(projectDetails);
-    projectList.appendChild(card);
-});
-
-// Kart oluşturulduktan sonra renkleri uygula
-const currentVars = THEMES[getCurrentTheme()];
-const currentMode2 = getCurrentMode();
-const activeVars = currentVars.fixed ? currentVars.light : (currentVars[currentMode2] || currentVars.light);
-document.querySelectorAll('.project-card h3').forEach(el => {
-    el.style.color = activeVars['--clr-card-title'];
-});
 
 // ========== GITHUB STAR COUNTER ==========
 let starCount = 0;
-
-function starUp() {
-    starCount++;
-    document.querySelectorAll('.star-count').forEach((starSpan) => {
-        starSpan.textContent = starCount;
-    });
-    if (starCount === projects.length) {
-        clearInterval(timerInterval);
-    }
+const starSpans = document.querySelectorAll('.star-count');
+if (starSpans.length > 0) {
+    const max = 7;
+    const timerInterval = setInterval(() => {
+        starCount++;
+        starSpans.forEach(span => { span.textContent = starCount; });
+        if (starCount >= max) clearInterval(timerInterval);
+    }, 100);
 }
-
-let timerInterval;
-function startTimer() {
-    timerInterval = setInterval(starUp, 100);
-}
-startTimer();
-
-// ========== PROJE KARTI ANİMASYONLARI ==========
-const projectCards = document.querySelectorAll('.project-card');
-projectCards.forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`;
-    setTimeout(() => {
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-        const clearDelay = 400 + index * 50 + 50;
-        setTimeout(() => {
-            card.style.transform = '';
-            card.style.transition = '';
-        }, clearDelay);
-    }, 50);
-});
