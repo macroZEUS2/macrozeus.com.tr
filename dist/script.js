@@ -1,8 +1,7 @@
 // Temayı yükle
 function setTheme(themeName) {
-    document.body.className = themeName; 
+    document.body.className = themeName;
     localStorage.setItem('siteTheme', themeName);
-}
 }
 
 // Sayfa yüklendiğinde hafızadaki temayı uygula
@@ -11,10 +10,16 @@ document.addEventListener('DOMContentLoaded', () => {
     setTheme(savedTheme);
 });
 
-// menu toggle
+// Menu Toggle
 const menuIcon = document.querySelector('.menu-icon');
 const menuList = document.querySelector('.menu-list');
 
+menuIcon.addEventListener("click", () => {
+    menuIcon.classList.toggle("active");
+    menuList.classList.toggle("active");
+});
+
+// Scroll Header
 window.addEventListener('scroll', () => {
     const header = document.getElementById('header');
     if (window.scrollY > 50) {
@@ -24,17 +29,13 @@ window.addEventListener('scroll', () => {
     }
 });
 
-menuIcon.addEventListener("click", () => {
-    menuIcon.classList.toggle("active");
-    menuList.classList.toggle("active");
-});
-
+// Projeler Listesi
 const projects = [
     { name: 'Renk Paleti', image: 'renk-paleti.png', link: 'projects/renk-paleti/' },
     { name: 'Dijital Saat', image: 'dijital-saat.png', link: 'projects/dijital-saat/' },
     { name: 'QR Kod Oluşturucu', image: 'qr-kod-olusturucu.png', link: 'projects/qr-kod-olusturucu/' },
-    { name: 'Döviz Çevirici', image: 'doviz-cevirici.png', link: 'projects/doviz-cevirici/' },
-    { name: 'Şifre Oluşturucu', image: 'sifre-olusturucu.png', link: 'projects/sifre-olusturucu/' },
+    { name: 'Döviz Çevirici', image: 'doviz-cevirici.png', link: 'projects/döviz-çevirici/' },
+    { name: 'Şifre Oluşturucu', image: 'sifre-olusturucu.png', link: 'projects/şifre-oluşturucu/' },
     { name: 'Hesap Makinesi', image: 'hesap-makinesi.png', link: 'projects/hesap-makinesi/' },
     { name: 'Hava Durumu', image: 'hava-durumu.png', link: 'projects/hava-durumu/' },
 ];
@@ -79,8 +80,8 @@ projects.forEach((project) => {
     projectList.appendChild(card);
 });
 
+// GitHub Yıldız Sayacı
 let starCount = 0;
-
 function starUp() {
     starCount++;
     document.querySelectorAll('.star-count').forEach((starSpan) => {
@@ -91,40 +92,22 @@ function starUp() {
     }
 }
 
-let timerInterval;
-function startTimer() {
-    timerInterval = setInterval(starUp, 100);
-}
-startTimer();
-console.log('star-count elements:', document.querySelectorAll('.star-count').length);
+let timerInterval = setInterval(starUp, 100);
 
+// Proje Kartı Animasyonları
 const projectCards = document.querySelectorAll('.project-card');
 projectCards.forEach((card, index) => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(30px)';
     card.style.transition = `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`;
+    
     setTimeout(() => {
         card.style.opacity = '1';
         card.style.transform = 'translateY(0)';
-        const clearDelay = 400 + index * 50 + 50;
+        
+        // Animasyon bittikten sonra transition'ı temizle (daha düzgün durması için)
         setTimeout(() => {
-            card.style.transform = '';
             card.style.transition = '';
-        }, clearDelay);
+        }, 500);
     }, 50);
 });
-
-function animateCard(card, index) {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`;
-    setTimeout(() => {
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-        const clearDelay = 400 + index * 50 + 50;
-        setTimeout(() => {
-            card.style.transform = '';
-            card.style.transition = '';
-        }, clearDelay);
-    }, 50);
-}
