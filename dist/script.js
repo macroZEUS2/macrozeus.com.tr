@@ -820,6 +820,11 @@ function applyTheme(themeKey, mode) {
 
     Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v));
 
+    // --clr-menu-text: menü arka planına göre otomatik hesapla (koyu bg → beyaz, açık bg → siyah)
+    const menuBg = vars['--clr-menu-bg'] || '#ffffff';
+    const menuTextColor = isLightColor(menuBg) ? '#111111' : '#eeeeee';
+    root.style.setProperty('--clr-menu-text', menuTextColor);
+
     localStorage.setItem('macroTheme', themeKey);
     if (!theme.fixed) localStorage.setItem('macroMode', mode);
 
@@ -873,11 +878,12 @@ function applyTheme(themeKey, mode) {
 function fixModeBtnContrast(accentColor) {
     const activeBtns = document.querySelectorAll('.mode-btn.active');
     activeBtns.forEach(btn => {
-        // Basit luma tahmini: açık renkse siyah yaz
         const isLight = isLightColor(accentColor);
-        btn.style.color = isLight ? '#111111' : '#ffffff';
-        const icon = btn.querySelector('i');
-        if (icon) icon.style.color = isLight ? '#111111' : '#ffffff';
+        const textColor = isLight ? '#111111' : '#ffffff';
+        btn.style.color = textColor;
+        btn.querySelectorAll('i, span').forEach(el => {
+            el.style.color = textColor;
+        });
     });
 }
 

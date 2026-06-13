@@ -31,6 +31,7 @@
     --clr-card-title: #111111;
     --clr-menu-bg: #ffffff;
     --clr-menu-border: rgba(0,0,0,0.10);
+    --clr-menu-text: #111111;
 
     /* ===== SABİT DEĞİŞKENLER ===== */
     --body-font-family: 'Poppins', sans-serif;
@@ -259,7 +260,7 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
     border: 1.5px solid var(--clr-menu-border);
     border-radius: 8px;
     background: transparent;
-    color: var(--clr-secondary);
+    color: var(--clr-menu-text);
     font-size: 12px;
     font-weight: 600;
     cursor: pointer;
@@ -273,7 +274,7 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
 
 .mode-btn:hover {
     background: rgba(128,128,128,0.12);
-    color: var(--clr-primary);
+    color: var(--clr-menu-text);
 }
 
 /* ===== DÜZELTME: Aktif mod butonu her zaman okunur ===== */
@@ -301,8 +302,8 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: var(--clr-secondary);
-    opacity: 0.6;
+    color: var(--clr-menu-text);
+    opacity: 0.5;
     padding: 4px 2px 6px;
     display: block;
     border-top: 1px solid var(--clr-menu-border);
@@ -338,7 +339,7 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
 .theme-opt-name {
     font-size: 13px;
     font-weight: 600;
-    color: var(--clr-primary);
+    color: var(--clr-menu-text);
     flex: 1;
 }
 
