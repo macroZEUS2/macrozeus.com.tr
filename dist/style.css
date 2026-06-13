@@ -1,31 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-    /* ===== THEME VARIABLES (overridden by JS) ===== */
-    --clr-primary: #ffa31a;
-    --clr-secondary: '#cccccc';
-    --clr-header: #111111;
-    --clr-body: #1a1a1a;
-    --clr-btn-bg: #ffa31a;
-    --clr-btn-bg-hover: #e08800;
-    --clr-btn-border: #ffa31a;
-    --clr-btn-text: #111111;
-    --clr-text-color: #ffffff;
-    --clr-card-bg: #222222;
-    --clr-card-shadow: rgba(255,163,26,0.35);
-    --clr-hero-text: #ffffff;
-    --clr-hero-sub: #ffa31a;
-    --clr-hero-desc: #aaaaaa;
-    --clr-section-title: #ffffff;
-    --clr-section-sub: #aaaaaa;
-    --clr-social-bg: #333333;
-    --clr-accent: #ffa31a;
-    --clr-github-bg: #ffa31a;
-    --clr-github-text: #111111;
-    --clr-github-hover: #e08800;
-    --clr-hero-glow: rgba(255,163,26,0.45);
+    /* ===== TEMA DEĞİŞKENLERİ (JS tarafından üzerine yazılır) ===== */
+    --clr-primary: #111111;
+    --clr-secondary: #444444;
+    --clr-header: #ffffff;
+    --clr-body: #f5f5f5;
+    --clr-btn-bg: #111111;
+    --clr-btn-bg-hover: #333333;
+    --clr-btn-border: #111111;
+    --clr-btn-text: #ffffff;
+    --clr-text-color: #111111;
+    --clr-card-bg: #ffffff;
+    --clr-card-shadow: rgba(0,0,0,0.10);
+    --clr-hero-text: #111111;
+    --clr-hero-sub: #333333;
+    --clr-hero-desc: #666666;
+    --clr-section-title: #111111;
+    --clr-section-sub: #555555;
+    --clr-social-bg: #e0e0e0;
+    --clr-social-icon: #333333;
+    --clr-social-icon-hover: #ffffff;
+    --clr-accent: #111111;
+    --clr-github-bg: #111111;
+    --clr-github-text: #ffffff;
+    --clr-github-hover: #333333;
+    --clr-github-border: transparent;
+    --clr-hero-glow: rgba(0,0,0,0.15);
+    --clr-card-title: #111111;
+    --clr-menu-bg: #ffffff;
+    --clr-menu-border: rgba(0,0,0,0.10);
 
-    /* ===== STATIC VARS ===== */
+    /* ===== SABİT DEĞİŞKENLER ===== */
     --body-font-family: 'Poppins', sans-serif;
     --fs-header-logo: 25px;
     --fs-project-card-header: 18px;
@@ -68,10 +74,10 @@ header {
     padding: 0 40px;
     z-index: 100;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.10);
 }
 
-header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
+header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
 
 .header-logo a span {
     font-size: var(--fs-header-logo);
@@ -89,58 +95,54 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
     column-gap: 20px;
 }
 
-/* ========== GITHUB SECTION ========== */
+/* ========== GITHUB BUTONU - HER ZAMAN SİYAH ========== */
 .github-section {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     padding: 8px 16px;
     border-radius: 50px;
-    background: var(--clr-github-bg);
-    color: var(--clr-github-text);
+    background: var(--clr-github-bg) !important;
+    color: var(--clr-github-text) !important;
+    border: 1px solid var(--clr-github-border);
     font-size: 13px;
     font-weight: 600;
     text-decoration: none;
-    transition: background 0.25s ease, color 0.25s ease;
+    transition: background 0.25s ease;
     font-family: var(--body-font-family);
-    border: none;
 }
 
-.github-section:hover { background: var(--clr-github-hover); }
+.github-section:hover { background: var(--clr-github-hover) !important; }
 .github-section.mobile { display: none; }
 
 .github-logo {
     display: flex;
     align-items: center;
     font-size: 20px;
-    color: var(--clr-github-text);
-    transition: color 0.25s ease;
+    color: var(--clr-github-text) !important;
 }
 
 .github-section-text {
     font-size: 13px;
     font-weight: 600;
-    color: var(--clr-github-text);
-    transition: color 0.25s ease;
+    color: var(--clr-github-text) !important;
 }
 
 .github-star-badge {
     display: inline-flex;
     align-items: center;
     gap: 3px;
-    background: rgba(0,0,0,0.15);
+    background: rgba(255,255,255,0.15);
     padding: 2px 8px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 700;
-    color: var(--clr-github-text);
-    transition: color 0.25s ease;
+    color: var(--clr-github-text) !important;
 }
 
 .github-star-badge i {
     font-size: 11px;
-    color: var(--clr-github-text);
-    transition: color 0.25s ease;
+    color: var(--clr-github-text) !important;
 }
 
 @media (max-width: 480px) {
@@ -159,7 +161,7 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
     .github-section.mobile .github-section-text { display: none; }
 }
 
-/* ========== MENU ========== */
+/* ========== MENÜ ========== */
 .header-menu { height: 100%; position: relative; }
 
 .menu-icon {
@@ -193,7 +195,8 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
     top: 80px;
     right: 0;
     padding: 14px;
-    background-color: #1a1a1a;
+    background-color: var(--clr-menu-bg);
+    border: 1px solid var(--clr-menu-border);
     transform: translateY(-20px);
     opacity: 0;
     transition: all 0.35s ease;
@@ -201,8 +204,7 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
     display: none;
     flex-direction: column;
     row-gap: 3px;
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
 }
 
 .menu-list.active {
@@ -212,10 +214,10 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
     z-index: 5;
 }
 
-/* macroZEUS theme option - special styling */
+/* macroZEUS özel stili */
 .theme-option.macrozeus-option {
-    background: rgba(255,163,26,0.1);
-    border: 1.5px solid rgba(255,163,26,0.3) !important;
+    background: rgba(255,163,26,0.10);
+    border: 1.5px solid rgba(255,163,26,0.30) !important;
     margin-bottom: 2px;
 }
 
@@ -228,14 +230,14 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
     border-color: rgba(255,163,26,0.55) !important;
 }
 
-/* Divider */
+/* Ayırıcı */
 .theme-divider {
     height: 1px;
-    background: rgba(255,255,255,0.1);
+    background: var(--clr-menu-border);
     margin: 6px 0;
 }
 
-/* Mode toggle */
+/* Mod toggle */
 #modeToggle {
     display: flex;
     gap: 6px;
@@ -245,10 +247,10 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
 .mode-btn {
     flex: 1;
     padding: 7px 0;
-    border: 1.5px solid rgba(255,255,255,0.15);
+    border: 1.5px solid var(--clr-menu-border);
     border-radius: 8px;
-    background: rgba(255,255,255,0.05);
-    color: rgba(255,255,255,0.55);
+    background: transparent;
+    color: var(--clr-secondary);
     font-size: 12px;
     font-weight: 600;
     cursor: pointer;
@@ -261,8 +263,8 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
 }
 
 .mode-btn:hover {
-    background: rgba(255,255,255,0.1);
-    color: rgba(255,255,255,0.85);
+    background: var(--clr-menu-border);
+    color: var(--clr-primary);
 }
 
 .mode-btn.active {
@@ -271,15 +273,22 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
     color: #fff;
 }
 
+/* Monochrome koyu modda aktif mod butonu düzeltmesi */
+.mode-btn.active i,
+.mode-btn.active span {
+    color: #fff !important;
+}
+
 .theme-label {
     font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: rgba(255,255,255,0.35);
+    color: var(--clr-secondary);
+    opacity: 0.6;
     padding: 4px 2px 6px;
     display: block;
-    border-top: 1px solid rgba(255,255,255,0.08);
+    border-top: 1px solid var(--clr-menu-border);
     margin-top: 2px;
 }
 
@@ -294,11 +303,11 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
     border: 1.5px solid transparent;
 }
 
-.theme-option:hover { background: rgba(255,255,255,0.07); }
+.theme-option:hover { background: rgba(128,128,128,0.08); }
 
 .theme-option.active {
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.18);
+    background: rgba(128,128,128,0.10);
+    border-color: var(--clr-menu-border);
 }
 
 .theme-dot {
@@ -306,13 +315,13 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
     height: 14px;
     border-radius: 50%;
     flex-shrink: 0;
-    border: 2px solid rgba(255,255,255,0.25);
+    border: 2px solid rgba(128,128,128,0.25);
 }
 
 .theme-opt-name {
     font-size: 13px;
     font-weight: 600;
-    color: rgba(255,255,255,0.82);
+    color: var(--clr-primary);
     flex: 1;
 }
 
@@ -380,12 +389,13 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
     flex-wrap: wrap;
 }
 
+/* ========== SOSYAL MEDYA - İKONLAR HER ZAMAN GÖRÜNÜR ========== */
 .social-btn {
     width: 45px;
     height: 45px;
     border-radius: 50%;
     background-color: var(--clr-social-bg);
-    color: var(--clr-hero-text);
+    color: var(--clr-social-icon);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -395,8 +405,13 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
 
 .social-btn:hover {
     background-color: var(--clr-accent);
-    color: #fff;
+    color: var(--clr-social-icon-hover);
     transform: translateY(-3px);
+}
+
+.social-btn i {
+    color: inherit;
+    transition: color 0.3s ease;
 }
 
 .hero-buttons {
@@ -417,6 +432,7 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
     font-weight: 600;
     font-size: 1rem;
     transition: all 0.3s ease;
+    border: none;
 }
 
 .hero-btn:hover {
@@ -428,7 +444,6 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
 .hero-btn.outline {
     background-color: var(--clr-btn-bg);
     color: var(--clr-btn-text);
-    border: none;
 }
 
 .hero-btn.outline:hover {
@@ -467,7 +482,7 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
     .hero-name { font-size: 1.6rem; }
 }
 
-/* ========== SECTION TITLE ========== */
+/* ========== BÖLÜM BAŞLIĞI ========== */
 .section-title {
     text-align: center;
     margin-bottom: 30px;
@@ -499,7 +514,7 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
     transition: color 0.3s ease;
 }
 
-/* ========== PROJECTS ========== */
+/* ========== PROJELER ========== */
 .project-section { width: 100%; padding-bottom: 40px; }
 
 .project-list {
@@ -555,8 +570,9 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
 }
 
 .project-card h3 {
-    color: var(--clr-secondary);
+    color: var(--clr-card-title);
     font-size: var(--fs-project-card-header);
+    transition: color 0.3s ease;
 }
 
 .btn-gruop { width: 100%; }
@@ -575,12 +591,6 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
 }
 
 .project-card a:hover { background-color: var(--clr-btn-bg-hover); color: #fff; }
-
-.project-card.homepage-card img {
-    object-fit: contain;
-    background-color: rgb(178, 190, 181);
-    padding: 40px;
-}
 
 /* ========== FOOTER ========== */
 footer {
