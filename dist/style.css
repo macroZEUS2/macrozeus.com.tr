@@ -22,6 +22,7 @@
     --clr-social-icon: #333333;
     --clr-social-icon-hover: #ffffff;
     --clr-accent: #111111;
+    /* GitHub artık temaya göre değişiyor */
     --clr-github-bg: #111111;
     --clr-github-text: #ffffff;
     --clr-github-hover: #333333;
@@ -95,54 +96,62 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
     column-gap: 20px;
 }
 
-/* ========== GITHUB BUTONU - HER ZAMAN SİYAH ========== */
+/* ========== GITHUB BUTONU - TEMAYA GÖRE RENK ========== */
 .github-section {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     padding: 8px 16px;
     border-radius: 50px;
-    background: var(--clr-github-bg) !important;
-    color: var(--clr-github-text) !important;
+    background: var(--clr-github-bg);
+    color: var(--clr-github-text);
     border: 1px solid var(--clr-github-border);
     font-size: 13px;
     font-weight: 600;
     text-decoration: none;
-    transition: background 0.25s ease;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
     font-family: var(--body-font-family);
 }
 
-.github-section:hover { background: var(--clr-github-hover) !important; }
+.github-section:hover {
+    background: var(--clr-github-hover);
+    color: var(--clr-github-text);
+}
+
 .github-section.mobile { display: none; }
 
 .github-logo {
     display: flex;
     align-items: center;
     font-size: 20px;
-    color: var(--clr-github-text) !important;
+    color: var(--clr-github-text);
+    transition: color 0.25s ease;
 }
 
 .github-section-text {
     font-size: 13px;
     font-weight: 600;
-    color: var(--clr-github-text) !important;
+    color: var(--clr-github-text);
+    transition: color 0.25s ease;
 }
 
 .github-star-badge {
     display: inline-flex;
     align-items: center;
     gap: 3px;
-    background: rgba(255,255,255,0.15);
+    background: rgba(128,128,128,0.20);
     padding: 2px 8px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: 700;
-    color: var(--clr-github-text) !important;
+    color: var(--clr-github-text);
+    transition: color 0.25s ease;
 }
 
 .github-star-badge i {
     font-size: 11px;
-    color: var(--clr-github-text) !important;
+    color: var(--clr-github-text);
+    transition: color 0.25s ease;
 }
 
 @media (max-width: 480px) {
@@ -263,20 +272,28 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
 }
 
 .mode-btn:hover {
-    background: var(--clr-menu-border);
+    background: rgba(128,128,128,0.12);
     color: var(--clr-primary);
 }
 
+/* ===== DÜZELTME: Aktif mod butonu her zaman okunur ===== */
 .mode-btn.active {
     background: var(--clr-accent);
     border-color: var(--clr-accent);
-    color: #fff;
+    color: #fff !important;
 }
 
-/* Monochrome koyu modda aktif mod butonu düzeltmesi */
-.mode-btn.active i,
+.mode-btn.active i {
+    color: #fff !important;
+}
+
 .mode-btn.active span {
     color: #fff !important;
+}
+
+/* Koyu modda aktif buton: accent rengi açık olabilir, text siyah */
+.mode-btn.active.dark-contrast {
+    color: #111 !important;
 }
 
 .theme-label {
@@ -389,7 +406,6 @@ header.scrolled { height: 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
     flex-wrap: wrap;
 }
 
-/* ========== SOSYAL MEDYA - İKONLAR HER ZAMAN GÖRÜNÜR ========== */
 .social-btn {
     width: 45px;
     height: 45px;

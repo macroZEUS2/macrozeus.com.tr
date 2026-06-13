@@ -4,34 +4,36 @@ const THEMES = {
         name: 'macroZEUS',
         fixed: true,
         light: {
-            '--clr-body': '#1a1a1a',
-            '--clr-header': '#111111',
-            '--clr-primary': '#ffa31a',
-            '--clr-secondary': '#cccccc',
+            // Eski CSS'ten alınan orijinal macroZEUS renkleri
+            '--clr-body': '#696969',
+            '--clr-header': '#ffffff',
+            '--clr-primary': '#000000',
+            '--clr-secondary': '#555555',
             '--clr-text-color': '#ffffff',
-            '--clr-btn-bg': '#ffa31a',
-            '--clr-btn-bg-hover': '#e08800',
-            '--clr-btn-border': '#ffa31a',
+            '--clr-btn-bg': 'rgb(255, 163, 26)',
+            '--clr-btn-bg-hover': '#000000',
+            '--clr-btn-border': '#000000',
             '--clr-btn-text': '#ffffff',
-            '--clr-card-bg': '#222222',
-            '--clr-card-shadow': 'rgba(255,163,26,0.25)',
+            '--clr-card-bg': '#ffffff',
+            '--clr-card-shadow': 'rgba(255,163,26,0.5)',
             '--clr-hero-text': '#ffffff',
-            '--clr-hero-sub': '#ffa31a',
-            '--clr-hero-desc': '#aaaaaa',
+            '--clr-hero-sub': 'rgb(178, 190, 181)',
+            '--clr-hero-desc': '#cccccc',
             '--clr-section-title': '#ffffff',
-            '--clr-section-sub': '#aaaaaa',
-            '--clr-social-bg': '#333333',
-            '--clr-social-icon': '#ffa31a',
+            '--clr-section-sub': '#cccccc',
+            '--clr-social-bg': '#555555',
+            '--clr-social-icon': '#ffffff',
             '--clr-social-icon-hover': '#ffffff',
-            '--clr-accent': '#ffa31a',
-            '--clr-github-bg': '#000000',
+            '--clr-accent': 'rgb(255, 163, 26)',
+            // GitHub artık temaya göre: macroZEUS'ta turuncu
+            '--clr-github-bg': 'rgb(255, 163, 26)',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
-            '--clr-github-border': 'rgba(255,255,255,0.15)',
-            '--clr-hero-glow': 'rgba(255,163,26,0.45)',
-            '--clr-card-title': '#ffa31a',
-            '--clr-menu-bg': '#1a1a1a',
-            '--clr-menu-border': 'rgba(255,163,26,0.2)',
+            '--clr-github-hover': '#000000',
+            '--clr-github-border': 'transparent',
+            '--clr-hero-glow': 'rgba(255,163,26,0.4)',
+            '--clr-card-title': '#555555',
+            '--clr-menu-bg': '#000000',
+            '--clr-menu-border': 'rgba(255,163,26,0.25)',
         }
     },
     monochrome: {
@@ -58,7 +60,7 @@ const THEMES = {
             '--clr-social-icon': '#333333',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#111111',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#111111',
             '--clr-github-text': '#ffffff',
             '--clr-github-hover': '#333333',
             '--clr-github-border': 'transparent',
@@ -76,7 +78,7 @@ const THEMES = {
             '--clr-btn-bg': '#eeeeee',
             '--clr-btn-bg-hover': '#cccccc',
             '--clr-btn-border': '#eeeeee',
-            '--clr-btn-text': '#111111',
+            '--clr-btn-text': '#111111',  // DÜZELTME: koyu bg üzerinde siyah yazı
             '--clr-card-bg': '#222222',
             '--clr-card-shadow': 'rgba(255,255,255,0.05)',
             '--clr-hero-text': '#eeeeee',
@@ -88,9 +90,10 @@ const THEMES = {
             '--clr-social-icon': '#cccccc',
             '--clr-social-icon-hover': '#111111',
             '--clr-accent': '#eeeeee',
-            '--clr-github-bg': '#000000',
-            '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#2a2a2a',
+            // Koyu modda GitHub gri-beyaz
+            '--clr-github-bg': '#2a2a2a',
+            '--clr-github-text': '#eeeeee',
+            '--clr-github-hover': '#444444',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
             '--clr-hero-glow': 'rgba(255,255,255,0.10)',
             '--clr-card-title': '#cccccc',
@@ -122,9 +125,9 @@ const THEMES = {
             '--clr-social-icon': '#1d4ed8',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#2563eb',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#2563eb',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#1d4ed8',
             '--clr-github-border': 'transparent',
             '--clr-hero-glow': 'rgba(37,99,235,0.35)',
             '--clr-card-title': '#1a3a7a',
@@ -152,9 +155,9 @@ const THEMES = {
             '--clr-social-icon': '#60a5fa',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#3b82f6',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#3b82f6',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#2563eb',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
             '--clr-hero-glow': 'rgba(59,130,246,0.35)',
             '--clr-card-title': '#93b4d8',
@@ -186,9 +189,9 @@ const THEMES = {
             '--clr-social-icon': '#15803d',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#16a34a',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#16a34a',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#15803d',
             '--clr-github-border': 'transparent',
             '--clr-hero-glow': 'rgba(22,163,74,0.35)',
             '--clr-card-title': '#14532d',
@@ -216,9 +219,9 @@ const THEMES = {
             '--clr-social-icon': '#4ade80',
             '--clr-social-icon-hover': '#052e16',
             '--clr-accent': '#22c55e',
-            '--clr-github-bg': '#000000',
-            '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-bg': '#22c55e',
+            '--clr-github-text': '#052e16',
+            '--clr-github-hover': '#4ade80',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
             '--clr-hero-glow': 'rgba(34,197,94,0.35)',
             '--clr-card-title': '#86efac',
@@ -250,9 +253,9 @@ const THEMES = {
             '--clr-social-icon': '#7c3aed',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#9333ea',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#9333ea',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#7c3aed',
             '--clr-github-border': 'transparent',
             '--clr-hero-glow': 'rgba(147,51,234,0.35)',
             '--clr-card-title': '#581c87',
@@ -280,9 +283,9 @@ const THEMES = {
             '--clr-social-icon': '#c084fc',
             '--clr-social-icon-hover': '#f3e8ff',
             '--clr-accent': '#a855f7',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#a855f7',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#7c3aed',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
             '--clr-hero-glow': 'rgba(168,85,247,0.35)',
             '--clr-card-title': '#c084fc',
@@ -314,9 +317,9 @@ const THEMES = {
             '--clr-social-icon': '#c2410c',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#ea580c',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#ea580c',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#c2410c',
             '--clr-github-border': 'transparent',
             '--clr-hero-glow': 'rgba(234,88,12,0.35)',
             '--clr-card-title': '#7c2d12',
@@ -344,9 +347,9 @@ const THEMES = {
             '--clr-social-icon': '#fb923c',
             '--clr-social-icon-hover': '#ffedd5',
             '--clr-accent': '#f97316',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#f97316',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#c2410c',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
             '--clr-hero-glow': 'rgba(249,115,22,0.35)',
             '--clr-card-title': '#fb923c',
@@ -378,9 +381,9 @@ const THEMES = {
             '--clr-social-icon': '#be123c',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#e11d48',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#e11d48',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#be123c',
             '--clr-github-border': 'transparent',
             '--clr-hero-glow': 'rgba(225,29,72,0.35)',
             '--clr-card-title': '#881337',
@@ -408,9 +411,9 @@ const THEMES = {
             '--clr-social-icon': '#fda4af',
             '--clr-social-icon-hover': '#ffe4ec',
             '--clr-accent': '#f43f5e',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#f43f5e',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#be123c',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
             '--clr-hero-glow': 'rgba(244,63,94,0.35)',
             '--clr-card-title': '#fda4af',
@@ -442,9 +445,9 @@ const THEMES = {
             '--clr-social-icon': '#334155',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#64748b',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#475569',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#334155',
             '--clr-github-border': 'transparent',
             '--clr-hero-glow': 'rgba(71,85,105,0.25)',
             '--clr-card-title': '#1e293b',
@@ -472,9 +475,9 @@ const THEMES = {
             '--clr-social-icon': '#94a3b8',
             '--clr-social-icon-hover': '#e2e8f0',
             '--clr-accent': '#94a3b8',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#64748b',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#475569',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
             '--clr-hero-glow': 'rgba(100,116,139,0.25)',
             '--clr-card-title': '#94a3b8',
@@ -506,9 +509,9 @@ const THEMES = {
             '--clr-social-icon': '#0f766e',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#0d9488',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#0d9488',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#0f766e',
             '--clr-github-border': 'transparent',
             '--clr-hero-glow': 'rgba(13,148,136,0.35)',
             '--clr-card-title': '#134e4a',
@@ -536,9 +539,9 @@ const THEMES = {
             '--clr-social-icon': '#2dd4bf',
             '--clr-social-icon-hover': '#042f2e',
             '--clr-accent': '#14b8a6',
-            '--clr-github-bg': '#000000',
-            '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-bg': '#14b8a6',
+            '--clr-github-text': '#042f2e',
+            '--clr-github-hover': '#0d9488',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
             '--clr-hero-glow': 'rgba(20,184,166,0.35)',
             '--clr-card-title': '#5eead4',
@@ -570,9 +573,9 @@ const THEMES = {
             '--clr-social-icon': '#b45309',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#d97706',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#d97706',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#b45309',
             '--clr-github-border': 'transparent',
             '--clr-hero-glow': 'rgba(217,119,6,0.35)',
             '--clr-card-title': '#78350f',
@@ -600,9 +603,9 @@ const THEMES = {
             '--clr-social-icon': '#fcd34d',
             '--clr-social-icon-hover': '#1c0f00',
             '--clr-accent': '#f59e0b',
-            '--clr-github-bg': '#000000',
-            '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-bg': '#f59e0b',
+            '--clr-github-text': '#1c0f00',
+            '--clr-github-hover': '#d97706',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
             '--clr-hero-glow': 'rgba(245,158,11,0.35)',
             '--clr-card-title': '#fcd34d',
@@ -634,9 +637,9 @@ const THEMES = {
             '--clr-social-icon': '#4338ca',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#4f46e5',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#4f46e5',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#4338ca',
             '--clr-github-border': 'transparent',
             '--clr-hero-glow': 'rgba(79,70,229,0.35)',
             '--clr-card-title': '#312e81',
@@ -664,9 +667,9 @@ const THEMES = {
             '--clr-social-icon': '#a5b4fc',
             '--clr-social-icon-hover': '#e0e7ff',
             '--clr-accent': '#6366f1',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#6366f1',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#4f46e5',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
             '--clr-hero-glow': 'rgba(99,102,241,0.35)',
             '--clr-card-title': '#a5b4fc',
@@ -698,9 +701,9 @@ const THEMES = {
             '--clr-social-icon': '#2d3748',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#4a5568',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#2d3748',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#1a202c',
             '--clr-github-border': 'transparent',
             '--clr-hero-glow': 'rgba(26,32,44,0.20)',
             '--clr-card-title': '#1a202c',
@@ -728,9 +731,9 @@ const THEMES = {
             '--clr-social-icon': '#9ca3af',
             '--clr-social-icon-hover': '#f9fafb',
             '--clr-accent': '#6b7280',
-            '--clr-github-bg': '#000000',
-            '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-bg': '#374151',
+            '--clr-github-text': '#f9fafb',
+            '--clr-github-hover': '#4b5563',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
             '--clr-hero-glow': 'rgba(249,250,251,0.08)',
             '--clr-card-title': '#d1d5db',
@@ -762,9 +765,9 @@ const THEMES = {
             '--clr-social-icon': '#a21caf',
             '--clr-social-icon-hover': '#ffffff',
             '--clr-accent': '#c026d3',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#c026d3',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#a21caf',
             '--clr-github-border': 'transparent',
             '--clr-hero-glow': 'rgba(192,38,211,0.35)',
             '--clr-card-title': '#86166e',
@@ -792,9 +795,9 @@ const THEMES = {
             '--clr-social-icon': '#e879f9',
             '--clr-social-icon-hover': '#fae8ff',
             '--clr-accent': '#d946ef',
-            '--clr-github-bg': '#000000',
+            '--clr-github-bg': '#d946ef',
             '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#222222',
+            '--clr-github-hover': '#a21caf',
             '--clr-github-border': 'rgba(255,255,255,0.15)',
             '--clr-hero-glow': 'rgba(217,70,239,0.35)',
             '--clr-card-title': '#e879f9',
@@ -815,12 +818,8 @@ function applyTheme(themeKey, mode) {
     const vars = theme.fixed ? theme.light : (theme[mode] || theme.light);
     const root = document.documentElement;
 
-    // Tüm CSS değişkenlerini uygula
     Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v));
 
-    // --clr-btn-text zaten her temada tanımlı, ek hesaplama gerek yok
-
-    // localStorage'a kaydet
     localStorage.setItem('macroTheme', themeKey);
     if (!theme.fixed) localStorage.setItem('macroMode', mode);
 
@@ -844,6 +843,16 @@ function applyTheme(themeKey, mode) {
         menuList.style.borderColor = vars['--clr-menu-border'];
     }
 
+    // GitHub butonları - temaya göre güncelle
+    document.querySelectorAll('.github-section').forEach(el => {
+        el.style.backgroundColor = vars['--clr-github-bg'];
+        el.style.color = vars['--clr-github-text'];
+        el.style.borderColor = vars['--clr-github-border'];
+    });
+    document.querySelectorAll('.github-logo, .github-section-text, .github-star-badge').forEach(el => {
+        el.style.color = vars['--clr-github-text'];
+    });
+
     // Proje kartı başlıkları
     document.querySelectorAll('.project-card h3').forEach(el => {
         el.style.color = vars['--clr-card-title'];
@@ -854,6 +863,33 @@ function applyTheme(themeKey, mode) {
         el.style.backgroundColor = vars['--clr-btn-bg'];
         el.style.color = vars['--clr-btn-text'];
     });
+
+    // Aktif mod butonu kontrast kontrolü
+    // Accent rengi açık mı koyu mu bak, text rengini ayarla
+    fixModeBtnContrast(vars['--clr-accent']);
+}
+
+// Aktif mode butonunun yazısının okunabilir olmasını sağlar
+function fixModeBtnContrast(accentColor) {
+    const activeBtns = document.querySelectorAll('.mode-btn.active');
+    activeBtns.forEach(btn => {
+        // Basit luma tahmini: açık renkse siyah yaz
+        const isLight = isLightColor(accentColor);
+        btn.style.color = isLight ? '#111111' : '#ffffff';
+        const icon = btn.querySelector('i');
+        if (icon) icon.style.color = isLight ? '#111111' : '#ffffff';
+    });
+}
+
+// Rengin açık mı koyu mu olduğunu tahmin eder
+function isLightColor(color) {
+    // rgb() formatı veya hex
+    let r, g, b;
+    const m = color.match(/\d+/g);
+    if (!m || m.length < 3) return false;
+    r = parseInt(m[0]); g = parseInt(m[1]); b = parseInt(m[2]);
+    const luma = 0.299 * r + 0.587 * g + 0.114 * b;
+    return luma > 155;
 }
 
 function updateThemeUI(themeKey, mode) {
@@ -915,10 +951,10 @@ function buildThemeMenu() {
     modeItem.innerHTML = `
         <div id="modeToggle" style="display:${currentTheme === 'macrozeus' ? 'none' : 'flex'};gap:6px;padding:4px 0;margin-bottom:4px">
             <button class="mode-btn mode-light ${currentMode === 'light' ? 'active' : ''}" data-mode="light">
-                <i class='bx bx-sun'></i> Açık
+                <i class='bx bx-sun'></i> <span>Açık</span>
             </button>
             <button class="mode-btn mode-dark ${currentMode === 'dark' ? 'active' : ''}" data-mode="dark">
-                <i class='bx bx-moon'></i> Koyu
+                <i class='bx bx-moon'></i> <span>Koyu</span>
             </button>
         </div>
     `;
@@ -965,9 +1001,15 @@ function buildThemeMenu() {
     });
 
     updateThemeUI(currentTheme, currentMode);
+    // İlk yüklemede kontrast düzelt
+    const savedTheme = THEMES[currentTheme];
+    if (savedTheme) {
+        const vars = savedTheme.fixed ? savedTheme.light : (savedTheme[currentMode] || savedTheme.light);
+        fixModeBtnContrast(vars['--clr-accent']);
+    }
 }
 
-// ========== TEMA BAŞLATMA (sayfanın en başında çalışır) ==========
+// ========== TEMA BAŞLATMA ==========
 (function initTheme() {
     const savedTheme = getCurrentTheme();
     const savedMode = getCurrentMode();
@@ -1006,7 +1048,7 @@ if (menuIcon && menuListEl) {
 // ========== TEMA MENÜSÜ OLUŞTUR ==========
 buildThemeMenu();
 
-// ========== PROJELER (sadece ana sayfada çalışır) ==========
+// ========== PROJELER ==========
 const projectList = document.querySelector('.project-list');
 if (projectList) {
     const projects = [
