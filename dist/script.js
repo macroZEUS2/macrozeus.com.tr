@@ -229,70 +229,6 @@ const THEMES = {
             '--clr-menu-border': 'rgba(34,197,94,0.2)',
         }
     },
-    purple: {
-        name: 'Royal Purple',
-        fixed: false,
-        light: {
-            '--clr-body': '#f5f0ff',
-            '--clr-header': '#ffffff',
-            '--clr-primary': '#581c87',
-            '--clr-secondary': '#7c3aed',
-            '--clr-text-color': '#581c87',
-            '--clr-btn-bg': '#9333ea',
-            '--clr-btn-bg-hover': '#7c3aed',
-            '--clr-btn-border': '#9333ea',
-            '--clr-btn-text': '#ffffff',
-            '--clr-card-bg': '#ffffff',
-            '--clr-card-shadow': 'rgba(147,51,234,0.15)',
-            '--clr-hero-text': '#3b0764',
-            '--clr-hero-sub': '#9333ea',
-            '--clr-hero-desc': '#6b4f7e',
-            '--clr-section-title': '#3b0764',
-            '--clr-section-sub': '#6b4f7e',
-            '--clr-social-bg': '#e9d5ff',
-            '--clr-social-icon': '#7c3aed',
-            '--clr-social-icon-hover': '#ffffff',
-            '--clr-accent': '#9333ea',
-            '--clr-github-bg': '#9333ea',
-            '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#7c3aed',
-            '--clr-github-border': 'transparent',
-            '--clr-hero-glow': 'rgba(147,51,234,0.35)',
-            '--clr-card-title': '#581c87',
-            '--clr-menu-bg': '#ffffff',
-            '--clr-menu-border': 'rgba(147,51,234,0.15)',
-        },
-        dark: {
-            '--clr-body': '#120426',
-            '--clr-header': '#1a063a',
-            '--clr-primary': '#f3e8ff',
-            '--clr-secondary': '#c084fc',
-            '--clr-text-color': '#f3e8ff',
-            '--clr-btn-bg': '#a855f7',
-            '--clr-btn-bg-hover': '#c084fc',
-            '--clr-btn-border': '#a855f7',
-            '--clr-btn-text': '#ffffff',
-            '--clr-card-bg': '#200840',
-            '--clr-card-shadow': 'rgba(168,85,247,0.15)',
-            '--clr-hero-text': '#f3e8ff',
-            '--clr-hero-sub': '#a855f7',
-            '--clr-hero-desc': '#c084fc',
-            '--clr-section-title': '#f3e8ff',
-            '--clr-section-sub': '#c084fc',
-            '--clr-social-bg': '#2d0c50',
-            '--clr-social-icon': '#c084fc',
-            '--clr-social-icon-hover': '#f3e8ff',
-            '--clr-accent': '#a855f7',
-            '--clr-github-bg': '#a855f7',
-            '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#7c3aed',
-            '--clr-github-border': 'rgba(255,255,255,0.15)',
-            '--clr-hero-glow': 'rgba(168,85,247,0.35)',
-            '--clr-card-title': '#c084fc',
-            '--clr-menu-bg': '#1a063a',
-            '--clr-menu-border': 'rgba(168,85,247,0.2)',
-        }
-    },
     ember: {
         name: 'Ember Red',
         fixed: false,
@@ -355,70 +291,6 @@ const THEMES = {
             '--clr-card-title': '#fb923c',
             '--clr-menu-bg': '#1f0d00',
             '--clr-menu-border': 'rgba(249,115,22,0.2)',
-        }
-    },
-    rose: {
-        name: 'Rose Pink',
-        fixed: false,
-        light: {
-            '--clr-body': '#fff0f5',
-            '--clr-header': '#ffffff',
-            '--clr-primary': '#881337',
-            '--clr-secondary': '#be123c',
-            '--clr-text-color': '#881337',
-            '--clr-btn-bg': '#e11d48',
-            '--clr-btn-bg-hover': '#be123c',
-            '--clr-btn-border': '#e11d48',
-            '--clr-btn-text': '#ffffff',
-            '--clr-card-bg': '#ffffff',
-            '--clr-card-shadow': 'rgba(225,29,72,0.15)',
-            '--clr-hero-text': '#4c0519',
-            '--clr-hero-sub': '#e11d48',
-            '--clr-hero-desc': '#7a3049',
-            '--clr-section-title': '#4c0519',
-            '--clr-section-sub': '#7a3049',
-            '--clr-social-bg': '#fecdd3',
-            '--clr-social-icon': '#be123c',
-            '--clr-social-icon-hover': '#ffffff',
-            '--clr-accent': '#e11d48',
-            '--clr-github-bg': '#e11d48',
-            '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#be123c',
-            '--clr-github-border': 'transparent',
-            '--clr-hero-glow': 'rgba(225,29,72,0.35)',
-            '--clr-card-title': '#881337',
-            '--clr-menu-bg': '#ffffff',
-            '--clr-menu-border': 'rgba(225,29,72,0.15)',
-        },
-        dark: {
-            '--clr-body': '#1a0310',
-            '--clr-header': '#220418',
-            '--clr-primary': '#ffe4ec',
-            '--clr-secondary': '#fda4af',
-            '--clr-text-color': '#ffe4ec',
-            '--clr-btn-bg': '#f43f5e',
-            '--clr-btn-bg-hover': '#fb7185',
-            '--clr-btn-border': '#f43f5e',
-            '--clr-btn-text': '#ffffff',
-            '--clr-card-bg': '#2d0820',
-            '--clr-card-shadow': 'rgba(244,63,94,0.15)',
-            '--clr-hero-text': '#ffe4ec',
-            '--clr-hero-sub': '#f43f5e',
-            '--clr-hero-desc': '#fda4af',
-            '--clr-section-title': '#ffe4ec',
-            '--clr-section-sub': '#fda4af',
-            '--clr-social-bg': '#3d0a28',
-            '--clr-social-icon': '#fda4af',
-            '--clr-social-icon-hover': '#ffe4ec',
-            '--clr-accent': '#f43f5e',
-            '--clr-github-bg': '#f43f5e',
-            '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#be123c',
-            '--clr-github-border': 'rgba(255,255,255,0.15)',
-            '--clr-hero-glow': 'rgba(244,63,94,0.35)',
-            '--clr-card-title': '#fda4af',
-            '--clr-menu-bg': '#220418',
-            '--clr-menu-border': 'rgba(244,63,94,0.2)',
         }
     },
     slate: {
@@ -741,70 +613,6 @@ const THEMES = {
             '--clr-menu-border': 'rgba(249,250,251,0.08)',
         }
     },
-    candy: {
-        name: 'Candy',
-        fixed: false,
-        light: {
-            '--clr-body': '#fff0fb',
-            '--clr-header': '#ffffff',
-            '--clr-primary': '#86166e',
-            '--clr-secondary': '#c026d3',
-            '--clr-text-color': '#86166e',
-            '--clr-btn-bg': '#c026d3',
-            '--clr-btn-bg-hover': '#a21caf',
-            '--clr-btn-border': '#c026d3',
-            '--clr-btn-text': '#ffffff',
-            '--clr-card-bg': '#ffffff',
-            '--clr-card-shadow': 'rgba(192,38,211,0.15)',
-            '--clr-hero-text': '#4a044e',
-            '--clr-hero-sub': '#c026d3',
-            '--clr-hero-desc': '#86556e',
-            '--clr-section-title': '#4a044e',
-            '--clr-section-sub': '#86556e',
-            '--clr-social-bg': '#f5d0fe',
-            '--clr-social-icon': '#a21caf',
-            '--clr-social-icon-hover': '#ffffff',
-            '--clr-accent': '#c026d3',
-            '--clr-github-bg': '#c026d3',
-            '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#a21caf',
-            '--clr-github-border': 'transparent',
-            '--clr-hero-glow': 'rgba(192,38,211,0.35)',
-            '--clr-card-title': '#86166e',
-            '--clr-menu-bg': '#ffffff',
-            '--clr-menu-border': 'rgba(192,38,211,0.15)',
-        },
-        dark: {
-            '--clr-body': '#1a0020',
-            '--clr-header': '#210030',
-            '--clr-primary': '#fae8ff',
-            '--clr-secondary': '#e879f9',
-            '--clr-text-color': '#fae8ff',
-            '--clr-btn-bg': '#d946ef',
-            '--clr-btn-bg-hover': '#e879f9',
-            '--clr-btn-border': '#d946ef',
-            '--clr-btn-text': '#ffffff',
-            '--clr-card-bg': '#2e0040',
-            '--clr-card-shadow': 'rgba(217,70,239,0.15)',
-            '--clr-hero-text': '#fae8ff',
-            '--clr-hero-sub': '#d946ef',
-            '--clr-hero-desc': '#e879f9',
-            '--clr-section-title': '#fae8ff',
-            '--clr-section-sub': '#e879f9',
-            '--clr-social-bg': '#3d0050',
-            '--clr-social-icon': '#e879f9',
-            '--clr-social-icon-hover': '#fae8ff',
-            '--clr-accent': '#d946ef',
-            '--clr-github-bg': '#d946ef',
-            '--clr-github-text': '#ffffff',
-            '--clr-github-hover': '#a21caf',
-            '--clr-github-border': 'rgba(255,255,255,0.15)',
-            '--clr-hero-glow': 'rgba(217,70,239,0.35)',
-            '--clr-card-title': '#e879f9',
-            '--clr-menu-bg': '#210030',
-            '--clr-menu-border': 'rgba(217,70,239,0.2)',
-        }
-    },
 };
 
 const DEFAULT_THEME = 'macrozeus';
@@ -887,13 +695,30 @@ function fixModeBtnContrast(accentColor) {
     });
 }
 
-// Rengin açık mı koyu mu olduğunu tahmin eder
+// Rengin açık mı koyu mu olduğunu doğru şekilde hesaplar (hex ve rgb destekli)
 function isLightColor(color) {
-    // rgb() formatı veya hex
+    if (!color) return true;
+    color = color.trim();
     let r, g, b;
-    const m = color.match(/\d+/g);
-    if (!m || m.length < 3) return false;
-    r = parseInt(m[0]); g = parseInt(m[1]); b = parseInt(m[2]);
+
+    // rgb() veya rgba()
+    if (color.startsWith('rgb')) {
+        const m = color.match(/(\d+)/g);
+        if (!m || m.length < 3) return true;
+        r = parseInt(m[0]); g = parseInt(m[1]); b = parseInt(m[2]);
+    }
+    // #rrggbb veya #rgb
+    else if (color.startsWith('#')) {
+        let hex = color.slice(1);
+        if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+        if (hex.length !== 6) return true;
+        r = parseInt(hex.slice(0, 2), 16);
+        g = parseInt(hex.slice(2, 4), 16);
+        b = parseInt(hex.slice(4, 6), 16);
+    } else {
+        return true;
+    }
+
     const luma = 0.299 * r + 0.587 * g + 0.114 * b;
     return luma > 155;
 }
@@ -918,7 +743,13 @@ function updateThemeUI(themeKey, mode) {
 }
 
 function getCurrentTheme() {
-    return localStorage.getItem('macroTheme') || DEFAULT_THEME;
+    const saved = localStorage.getItem('macroTheme');
+    // Silinmiş tema kaydedilmişse varsayılana dön
+    if (saved && !THEMES[saved]) {
+        localStorage.removeItem('macroTheme');
+        return DEFAULT_THEME;
+    }
+    return saved || DEFAULT_THEME;
 }
 
 function getCurrentMode() {
@@ -1053,6 +884,8 @@ if (menuIcon && menuListEl) {
 
 // ========== TEMA MENÜSÜ OLUŞTUR ==========
 buildThemeMenu();
+// Menü DOM'u yeniden oluşturduğu için temayı tekrar uygula (buton kontrast fix)
+applyTheme(getCurrentTheme(), getCurrentMode());
 
 // ========== PROJELER ==========
 const projectList = document.querySelector('.project-list');
