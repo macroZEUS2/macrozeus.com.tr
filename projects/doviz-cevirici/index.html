@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <link rel="icon" type="image/png" href="/doviz-cevirici.png">
+    <link rel="icon" type="image/png"
+          data-macrozeus="/doviz-cevirici.png"
+          data-other="/1doviz-cevirici.png"
+          href="/doviz-cevirici.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Döviz Çevirici</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script>
+        (function() {
+            function applyFavicon() {
+                var theme = localStorage.getItem('macroTheme') || 'macrozeus';
+                var favicon = document.querySelector('link[rel="icon"]');
+                if (!favicon) return;
+                favicon.href = theme === 'macrozeus'
+                    ? favicon.getAttribute('data-macrozeus')
+                    : favicon.getAttribute('data-other');
+            }
+            applyFavicon();
+            window.addEventListener('storage', function(e) {
+                if (e.key === 'macroTheme') applyFavicon();
+            });
+        })();
+    </script>
 </head>
 <body>
     <a href="/#projects" class="back-to-home">

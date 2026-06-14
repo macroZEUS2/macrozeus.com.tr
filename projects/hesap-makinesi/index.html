@@ -1,12 +1,31 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <link rel="icon" type="image/png"
+          data-macrozeus="/hesap-makinesi.png"
+          data-other="/1hesap-makinesi.png"
+          href="/hesap-makinesi.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hesap Makinesi</title>
-    <link rel="icon" type="image/png" href="/hesap-makinesi.png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
+    <script>
+        (function() {
+            function applyFavicon() {
+                var theme = localStorage.getItem('macroTheme') || 'macrozeus';
+                var favicon = document.querySelector('link[rel="icon"]');
+                if (!favicon) return;
+                favicon.href = theme === 'macrozeus'
+                    ? favicon.getAttribute('data-macrozeus')
+                    : favicon.getAttribute('data-other');
+            }
+            applyFavicon();
+            window.addEventListener('storage', function(e) {
+                if (e.key === 'macroTheme') applyFavicon();
+            });
+        })();
+    </script>
 </head>
 <body>
    <a href="/#projects" class="back-to-home">
