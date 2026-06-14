@@ -618,6 +618,56 @@ const THEMES = {
 const DEFAULT_THEME = 'macrozeus';
 const DEFAULT_MODE = 'light';
 
+// ========== PROJELERİN GÖRSELLERİ (temaya göre) ==========
+// macrozeus: orijinal görseller
+// diğer temalar: 1 prefix'li görseller
+const PROJECT_IMAGES = {
+    macrozeus: {
+        'Renk Paleti':        'renk-paleti.png',
+        'Dijital Saat':       'dijital-saat.png',
+        'QR Kod Oluşturucu':  'qr-kod-olusturucu.png',
+        'Döviz Çevirici':     'doviz-cevirici.png',
+        'Şifre Oluşturucu':   'sifre-olusturucu.png',
+        'Hesap Makinesi':     'hesap-makinesi.png',
+        'Hava Durumu':        'hava-durumu.png',
+    },
+    other: {
+        'Renk Paleti':        '1renk-paleti.png',
+        'Dijital Saat':       '1dijital-saat.png',
+        'QR Kod Oluşturucu':  '1qr-kod-olusturucu.png',
+        'Döviz Çevirici':     '1doviz-cevirici.png',
+        'Şifre Oluşturucu':   '1sifre-olusturucu.png',
+        'Hesap Makinesi':     '1hesap-makinesi.png',
+        'Hava Durumu':        '1hava-durumu.png',
+    }
+};
+
+function updateProjectImages(themeKey) {
+    const set = themeKey === 'macrozeus' ? PROJECT_IMAGES.macrozeus : PROJECT_IMAGES.other;
+    document.querySelectorAll('.project-card').forEach(card => {
+        const title = card.querySelector('h3');
+        const img = card.querySelector('img');
+        if (!title || !img) return;
+        const projectName = title.textContent.trim();
+        if (set[projectName]) {
+            img.src = set[projectName];
+        }
+    });
+}
+
+// ========== FAVİCON (temaya göre) ==========
+// macroZEUS → homepage.png  |  diğer temalar → 1homepage.png
+function updateFavicon(themeKey) {
+    let favicon = document.querySelector('link[rel="icon"]');
+    if (!favicon) {
+        favicon = document.createElement('link');
+        favicon.rel = 'icon';
+        favicon.type = 'image/png';
+        document.head.appendChild(favicon);
+    }
+    favicon.href = themeKey === 'macrozeus' ? 'homepage.png' : '1homepage.png';
+}
+
 // ========== THEME APPLICATION ==========
 function applyTheme(themeKey, mode) {
     const theme = THEMES[themeKey];
@@ -676,6 +726,12 @@ function applyTheme(themeKey, mode) {
         el.style.backgroundColor = vars['--clr-btn-bg'];
         el.style.color = vars['--clr-btn-text'];
     });
+
+    // Proje kartı görselleri - temaya göre değiştir
+    updateProjectImages(themeKey);
+
+    // Favicon - macroZEUS'ta homepage.png, diğer temalarda 1homepage.png
+    updateFavicon(themeKey);
 
     // Aktif mod butonu kontrast kontrolü
     // Accent rengi açık mı koyu mu bak, text rengini ayarla
@@ -766,6 +822,18 @@ function buildThemeMenu() {
     const currentTheme = getCurrentTheme();
     const currentMode = getCurrentMode();
 
+    // Mevcut tema değişkenlerini al
+    const themeData = THEMES[currentTheme];
+    const activeVars = themeData
+        ? (themeData.fixed ? themeData.light : (themeData[currentMode] || themeData.light))
+        : {};
+
+    const menuBg = activeVars['--clr-menu-bg'] || '#ffffff';
+    const menuText = isLightColor(menuBg) ? '#111111' : '#eeeeee';
+    const accentColor = activeVars['--clr-accent'] || '#111111';
+    const activeBtnText = isLightColor(accentColor) ? '#111111' : '#ffffff';
+    const menuBorder = activeVars['--clr-menu-border'] || 'rgba(0,0,0,0.1)';
+
     // macroZEUS - en üstte sabit
     const macrothemeKey = 'macrozeus';
     const macroTheme = THEMES[macrothemeKey];
@@ -773,25 +841,32 @@ function buildThemeMenu() {
     macroLi.innerHTML = `
         <div class="theme-option macrozeus-option ${currentTheme === macrothemeKey ? 'active' : ''}" data-theme="${macrothemeKey}">
             <span class="theme-dot" style="background:${macroTheme.light['--clr-accent']}"></span>
-            <span class="theme-opt-name">${macroTheme.name}</span>
+            <span class="theme-opt-name" style="color:${menuText}">${macroTheme.name}</span>
         </div>
     `;
     menuList.appendChild(macroLi);
 
     // Ayırıcı
     const divider = document.createElement('li');
-    divider.innerHTML = '<div class="theme-divider"></div>';
+    divider.innerHTML = `<div class="theme-divider" style="background:${menuBorder}"></div>`;
     menuList.appendChild(divider);
 
-    // Mod toggle
+    // Mod toggle — buton renklerini inline yaz
+    const isLight = currentMode === 'light';
     const modeItem = document.createElement('li');
     modeItem.innerHTML = `
         <div id="modeToggle" style="display:${currentTheme === 'macrozeus' ? 'none' : 'flex'};gap:6px;padding:4px 0;margin-bottom:4px">
-            <button class="mode-btn mode-light ${currentMode === 'light' ? 'active' : ''}" data-mode="light">
-                <i class='bx bx-sun'></i> <span>Açık</span>
+            <button class="mode-btn mode-light ${isLight ? 'active' : ''}" data-mode="light"
+                style="${isLight
+                    ? `background:${accentColor};border-color:${accentColor};color:${activeBtnText}`
+                    : `background:transparent;border-color:${menuBorder};color:${menuText}`}">
+                <i class='bx bx-sun' style="color:inherit"></i> <span style="color:inherit">Açık</span>
             </button>
-            <button class="mode-btn mode-dark ${currentMode === 'dark' ? 'active' : ''}" data-mode="dark">
-                <i class='bx bx-moon'></i> <span>Koyu</span>
+            <button class="mode-btn mode-dark ${!isLight ? 'active' : ''}" data-mode="dark"
+                style="${!isLight
+                    ? `background:${accentColor};border-color:${accentColor};color:${activeBtnText}`
+                    : `background:transparent;border-color:${menuBorder};color:${menuText}`}">
+                <i class='bx bx-moon' style="color:inherit"></i> <span style="color:inherit">Koyu</span>
             </button>
         </div>
     `;
@@ -799,7 +874,7 @@ function buildThemeMenu() {
 
     // Tema başlığı
     const label = document.createElement('li');
-    label.innerHTML = '<span class="theme-label">Temalar</span>';
+    label.innerHTML = `<span class="theme-label" style="color:${menuText};opacity:0.5;border-top:1px solid ${menuBorder}">Temalar</span>`;
     menuList.appendChild(label);
 
     // Diğer temalar
@@ -810,7 +885,7 @@ function buildThemeMenu() {
         li.innerHTML = `
             <div class="theme-option ${currentTheme === key ? 'active' : ''}" data-theme="${key}">
                 <span class="theme-dot" style="background:${accent}"></span>
-                <span class="theme-opt-name">${theme.name}</span>
+                <span class="theme-opt-name" style="color:${menuText}">${theme.name}</span>
             </div>
         `;
         menuList.appendChild(li);
@@ -823,6 +898,8 @@ function buildThemeMenu() {
             const mode = btn.dataset.mode;
             const theme = getCurrentTheme();
             applyTheme(theme, mode);
+            // Menüyü yeniden oluştur (buton renkleri güncellensin)
+            buildThemeMenu();
         });
     });
 
@@ -834,16 +911,12 @@ function buildThemeMenu() {
             const theme = THEMES[key];
             const mode = theme.fixed ? 'light' : getCurrentMode();
             applyTheme(key, mode);
+            // Menüyü yeniden oluştur (yazı renkleri güncellensin)
+            buildThemeMenu();
         });
     });
 
     updateThemeUI(currentTheme, currentMode);
-    // İlk yüklemede kontrast düzelt
-    const savedTheme = THEMES[currentTheme];
-    if (savedTheme) {
-        const vars = savedTheme.fixed ? savedTheme.light : (savedTheme[currentMode] || savedTheme.light);
-        fixModeBtnContrast(vars['--clr-accent']);
-    }
 }
 
 // ========== TEMA BAŞLATMA ==========
@@ -917,8 +990,13 @@ if (projectList) {
         const card = document.createElement('div');
         card.classList.add('project-card');
 
+        const activeThemeKey = getCurrentTheme();
+        const imgSet = activeThemeKey === 'macrozeus' ? PROJECT_IMAGES.macrozeus : PROJECT_IMAGES.other;
+        // macroZEUS → orijinal, diğer temalar → 1-prefix'li görseller
+        const imgSrc = imgSet[project.name] || project.image;
+
         const image = document.createElement('img');
-        image.src = project.image;
+        image.src = imgSrc;
         image.alt = project.name;
 
         const projectDetails = document.createElement('div');
