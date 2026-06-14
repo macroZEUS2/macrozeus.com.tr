@@ -10,22 +10,6 @@
     <title>Döviz Çevirici</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script>
-        (function() {
-            function applyFavicon() {
-                var theme = localStorage.getItem('macroTheme') || 'macrozeus';
-                var favicon = document.querySelector('link[rel="icon"]');
-                if (!favicon) return;
-                favicon.href = theme === 'macrozeus'
-                    ? favicon.getAttribute('data-macrozeus')
-                    : favicon.getAttribute('data-other');
-            }
-            applyFavicon();
-            window.addEventListener('storage', function(e) {
-                if (e.key === 'macroTheme') applyFavicon();
-            });
-        })();
-    </script>
 </head>
 <body>
     <a href="/#projects" class="back-to-home">
@@ -60,6 +44,7 @@
         </a>
     </div>
 
+    <script src="../../dist/theme.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
