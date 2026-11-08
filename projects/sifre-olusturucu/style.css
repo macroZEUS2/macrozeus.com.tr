@@ -3,10 +3,11 @@
 :root {
     --clr-body: rgb(178, 190, 181);
     --clr-container: rgb(85, 85, 85);
+    --clr-field: #444;
     --clr-btn-bg: rgb(255, 163, 26);
     --clr-btn-hover: #000;
     --clr-text: #fff;
-    --clr-secondary: #aaa;
+    --clr-secondary: #ccc;
 }
 
 * {
@@ -18,12 +19,13 @@
 
 body {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1.5rem;
     min-height: 100vh;
     background: var(--clr-body);
-    position: relative;
-    padding: 60px 10px 40px;
+    padding: 70px 10px 30px;
 }
 
 .container {
@@ -40,14 +42,15 @@ body {
     font-size: 1.31rem;
     padding: 1.2rem 1.75rem;
     color: var(--clr-text);
-    border-bottom: 2px solid #444;
+    border-bottom: 2px solid var(--clr-field);
 }
 
 .wrapper {
-    margin: 1.25rem 1.75rem;
+    margin: 1.25rem 1.75rem 1.5rem;
 }
 
-.wrapper .input-box {
+/* Şifre kutusu */
+.input-box {
     position: relative;
 }
 
@@ -55,13 +58,14 @@ body {
     width: 100%;
     height: 55px;
     color: var(--clr-text);
-    background: #444;
+    background: var(--clr-field);
     font-size: 1.06rem;
     font-weight: 500;
     border-radius: 8px;
     letter-spacing: 1.4px;
-    border: 2px solid #555;
-    padding: 0 2.85rem 0 1rem;
+    border: 2px solid #666;
+    padding: 0 3rem 0 1rem;
+    text-overflow: ellipsis;
     transition: border-color 0.3s ease;
 }
 
@@ -72,42 +76,49 @@ body {
 
 .input-box span {
     position: absolute;
+    top: 0;
     right: 13px;
+    line-height: 55px;
     cursor: pointer;
-    line-height: 53px;
+    user-select: none;
     color: var(--clr-secondary);
     transition: color 0.3s ease;
 }
 
-.input-box span:hover {
+.input-box span:hover,
+.input-box span:focus-visible,
+.input-box span.copied {
     color: var(--clr-btn-bg);
+    outline: none;
 }
 
-.wrapper .pass-indicator {
+/* Güç göstergesi */
+.pass-indicator {
     width: 100%;
-    height: 4px;
+    height: 6px;
     position: relative;
-    background: #444;
+    background: var(--clr-field);
     margin-top: 0.75rem;
     border-radius: 25px;
+    overflow: hidden;
 }
 
 .pass-indicator::before {
     position: absolute;
     content: "";
-    height: 100%;
-    width: 50%;
+    inset: 0 auto 0 0;
+    width: 33%;
     border-radius: inherit;
-    transition: width 0.3s ease;
+    transition: width 0.3s ease, background-color 0.3s ease;
 }
 
 .pass-indicator#weak::before {
-    width: 25%;
+    width: 33%;
     background: #ff4444;
 }
 
 .pass-indicator#medium::before {
-    width: 50%;
+    width: 66%;
     background: #FFD700;
 }
 
@@ -116,15 +127,17 @@ body {
     background: #00cc66;
 }
 
-.wrapper .pass-length {
-    margin: 1.56rem 0 1.25rem;
+/* Uzunluk çubuğu */
+.pass-length {
+    margin: 1.5rem 0 1.25rem;
 }
 
 .pass-length .details {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: var(--clr-text);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.9rem;
 }
 
 .pass-length .details span {
@@ -133,12 +146,43 @@ body {
 }
 
 .pass-length input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
     width: 100%;
-    height: 5px;
-    accent-color: var(--clr-btn-bg);
+    height: 6px;
+    border-radius: 25px;
     cursor: pointer;
+    outline: none;
+    background: linear-gradient(to right,
+            var(--clr-btn-bg) var(--fill, 50%),
+            var(--clr-field) var(--fill, 50%));
 }
 
+.pass-length input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--clr-btn-bg);
+    border: 3px solid var(--clr-container);
+    box-shadow: 0 0 0 1px var(--clr-btn-bg);
+}
+
+.pass-length input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--clr-btn-bg);
+    border: 3px solid var(--clr-container);
+    box-shadow: 0 0 0 1px var(--clr-btn-bg);
+}
+
+.pass-length input[type="range"]:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 163, 26, 0.4);
+}
+
+/* Ayarlar */
 .pass-settings .title {
     color: var(--clr-text);
     font-weight: 600;
@@ -155,17 +199,13 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
-    width: calc(100% / 2);
-}
-
-.options .option:first-child {
-    pointer-events: none;
-    opacity: 0.6;
+    width: 50%;
 }
 
 .options .option input {
     height: 16px;
     width: 16px;
+    flex-shrink: 0;
     cursor: pointer;
     accent-color: var(--clr-btn-bg);
 }
@@ -177,7 +217,8 @@ body {
     font-size: 0.9rem;
 }
 
-.wrapper .generate-btn {
+/* Buton */
+.generate-btn {
     width: 100%;
     color: #fff;
     border: none;
@@ -189,19 +230,21 @@ body {
     border-radius: 8px;
     text-transform: uppercase;
     font-weight: 600;
-    margin: 0.94rem 0 1.3rem;
+    margin-top: 0.5rem;
     transition: background-color 0.3s ease;
     letter-spacing: 1px;
 }
 
-.wrapper .generate-btn:hover {
+.generate-btn:hover,
+.generate-btn:focus-visible {
     background: var(--clr-btn-hover);
 }
 
+/* Alt bilgi */
 .attribute {
-    position: absolute;
-    bottom: 10px;
     color: #000;
+    font-size: 0.95rem;
+    text-align: center;
 }
 
 .attribute a {
@@ -224,10 +267,8 @@ body {
     justify-content: center;
     transition: all 0.3s ease;
     z-index: 999;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     text-decoration: none;
-    border: none;
-    outline: none;
     line-height: 1;
 }
 
@@ -240,9 +281,11 @@ body {
     .container {
         width: 95%;
     }
+
     .wrapper {
-        margin: 1.25rem 1rem;
+        margin: 1.25rem 1rem 1.5rem;
     }
+
     .pass-settings .options .option {
         width: 100%;
     }

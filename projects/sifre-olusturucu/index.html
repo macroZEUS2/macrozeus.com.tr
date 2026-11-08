@@ -13,52 +13,52 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="/#projects" class="back-to-home">
+    <a href="/#projects" class="back-to-home" aria-label="Ana sayfaya dön">
         <i class='bx bx-arrow-back'></i>
     </a>
-    <div class="container">
+    <main class="container">
         <h2>Şifre Oluşturucu</h2>
         <div class="wrapper">
             <div class="input-box">
-                <input type="text" disabled>
-                <span class="material-symbols-rounded">copy_all</span>
+                <input type="text" readonly aria-label="Oluşturulan şifre">
+                <span class="material-symbols-rounded" role="button" tabindex="0" aria-label="Şifreyi kopyala">copy_all</span>
             </div>
-            <div class="pass-indicator"></div>
+            <div class="pass-indicator" aria-hidden="true"></div>
             <div class="pass-length">
                 <div class="details">
-                    <label class="title">Şifre Uzunluğu</label>
+                    <label class="title" for="length">Şifre Uzunluğu</label>
                     <span></span>
                 </div>
-                <input type="range" min="1" max="30" value="15" step="1">
+                <input type="range" id="length" min="4" max="30" value="15" step="1">
             </div>
             <div class="pass-settings">
-                <label class="title">Şifre Ayarları</label>
+                <p class="title">Şifre Ayarları</p>
                 <ul class="options">
                     <li class="option">
                         <input type="checkbox" id="lowercase" checked>
                         <label for="lowercase">Küçük Harfler (a-z)</label>
                     </li>
                     <li class="option">
-                        <input type="checkbox" id="uppercase">
+                        <input type="checkbox" id="uppercase" checked>
                         <label for="uppercase">Büyük Harfler (A-Z)</label>
                     </li>
                     <li class="option">
-                        <input type="checkbox" id="numbers">
+                        <input type="checkbox" id="numbers" checked>
                         <label for="numbers">Sayılar (0-9)</label>
                     </li>
                     <li class="option">
                         <input type="checkbox" id="symbols">
-                        <label for="symbols">Semboller (!-$^+)</label>
+                        <label for="symbols">Semboller (!@#$%)</label>
                     </li>
                 </ul>
             </div>
             <button class="generate-btn">Oluştur</button>
         </div>
-    </div>
-    <div class="attribute">
-        Create by
+    </main>
+    <footer class="attribute">
+        Created by
         <a href="https://www.instagram.com/muhammetalialc">Muhammet Ali Alçı</a>
-    </div>
+    </footer>
     <script src="../../dist/theme.js"></script>
     <script src="script.js" defer></script>
 </body>

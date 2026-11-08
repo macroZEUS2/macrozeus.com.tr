@@ -367,6 +367,33 @@ const PROJECT_THEMES = {
     },
 };
 
+function parseThemeColor(color) {
+    if (!color) return null;
+    color = String(color).trim();
+    if (color.startsWith('rgb')) {
+        const m = color.match(/(\d+)/g);
+        if (!m || m.length < 3) return null;
+        return [parseInt(m[0], 10), parseInt(m[1], 10), parseInt(m[2], 10)];
+    }
+    if (color.startsWith('#')) {
+        let hex = color.slice(1);
+        if (hex.length === 3) hex = hex.split('').map(function (c) { return c + c; }).join('');
+        if (hex.length !== 6) return null;
+        return [parseInt(hex.slice(0, 2), 16), parseInt(hex.slice(2, 4), 16), parseInt(hex.slice(4, 6), 16)];
+    }
+    return null;
+}
+
+function isLightThemeColor(color) {
+    const rgb = parseThemeColor(color);
+    if (!rgb) return true;
+    return (0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2]) > 155;
+}
+
+function contrastOn(bg) {
+    return isLightThemeColor(bg) ? '#111111' : '#ffffff';
+}
+
 // ========== TEMA UYGULA ==========
 function applyProjectTheme(themeKey, mode) {
     // Tema + mod kombinasyonunu belirle
@@ -381,21 +408,38 @@ function applyProjectTheme(themeKey, mode) {
     const root = document.documentElement;
     Object.entries(vars).forEach(([k, v]) => root.style.setProperty(k, v));
 
-    // Gölge rengini container'a uygula (box-shadow inline override)
+    const bodyBg = vars['--clr-body'];
+    const containerBg = vars['--clr-container'];
+    const btnBg = vars['--clr-btn-bg'];
+    const btnHover = vars['--clr-btn-hover'];
+    const containerLight = isLightThemeColor(containerBg);
+
+    root.style.setProperty('--clr-muted', containerLight ? '#4b5563' : '#c5cdd6');
+    root.style.setProperty('--clr-surface', vars['--input-bg'] || (containerLight ? '#ececec' : '#3a3a3a'));
+    root.style.setProperty('--clr-on-btn', contrastOn(btnBg));
+    root.style.setProperty('--clr-on-hover', contrastOn(btnHover || btnBg));
+    root.style.setProperty('--clr-on-body', contrastOn(bodyBg));
+    root.style.setProperty('--back-bg', btnBg);
+    root.style.setProperty('--back-icon', contrastOn(btnBg));
+
+    // Gölgeyi yalnızca dış kartlara uygula (iç wrapper çift gölge yapmasın)
     const shadowColor = vars['--shadow-color'];
     if (shadowColor) {
         document.querySelectorAll('.container, .wrapper').forEach(el => {
+            if (el.parentElement && el.parentElement.closest('.container, .wrapper')) return;
             el.style.boxShadow = `0 0 30px ${shadowColor}`;
         });
     }
 
-    // Input arka plan rengini güncelle
+    // Input arka plan ve yazı rengini güncelle
     const inputBg = vars['--input-bg'];
     const inputBorder = vars['--input-border'];
+    const textColor = vars['--clr-text'];
     if (inputBg) {
         document.querySelectorAll('input:not([type="color"]):not([type="range"]):not([type="checkbox"]), select').forEach(el => {
             el.style.backgroundColor = inputBg;
             el.style.borderColor = inputBorder;
+            if (textColor) el.style.color = textColor;
         });
     }
 
